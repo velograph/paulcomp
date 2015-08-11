@@ -1,0 +1,20 @@
+/*!
+* Theme Name:  Paul Components
+* Theme URI:   http://velograph.co
+* Description: Custom Theme for Paul Components
+* Author:      Velograph
+* Author URI:  http://velograph.co
+* Version:     0.1.0
+* Tags:
+* Text Domain: paulcomponents
+* Domain Path: /languages/
+*
+* License:     Commercial
+*/
+
+@import "bourbon/bourbon";
+@import "base/grid-settings";
+@import "neat/neat";
+@import "base/base";
+
+@import "variables";
