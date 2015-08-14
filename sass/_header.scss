@@ -1,0 +1,94 @@
+.mobile-header {
+	display: block;
+	@include media( $large-screen ) {
+		display: none;
+	}
+}
+.desktop-header {
+	background: $black;
+	border-bottom: $five solid $orange;
+	display: none;
+	@include media( $large-screen ) {
+		display: block;
+	}
+	.inner-container {
+		@include outer-container;
+		padding-top: $fifteen;
+		svg {
+			fill: $white;
+		}
+		.utility-header {
+			font-size: 12px;
+			svg {
+				vertical-align: middle;
+				width: 12px;
+			}
+			a {
+				color: $white;
+			}
+			.account-link {
+				@include shift(8);
+				@include span-columns(1);
+				padding-top: 3px;
+				text-align: right;
+				.account-title {
+					text-decoration: underline;
+				}
+			}
+			.cart-link {
+				@include span-columns(1);
+				padding-top: 3px;
+				text-align: right;
+				.cart-title {
+					text-decoration: underline;
+				}
+				.cart-count {
+					font-weight: 700;
+				}
+			}
+			.search-form {
+				@include span-columns(2);
+				color: $dark-gray;
+				input[type="search"] {
+					padding: $five $five $five $twentyfive;
+					border: 2px solid $light-gray;
+					background: {
+						image: url('../images/magnifying_glass.svg');
+					}
+				}
+			}
+		}
+		.main-navigation {
+			.site-branding {
+				@include span-columns(2);
+			}
+			.navigation {
+				@include span-columns(10);
+				text-align: right;
+				ul {
+					display: inline-flex;
+					margin-top: 90px;
+  					li {
+ 						flex-direction: row-reverse;
+ 						margin-bottom: 7px;
+						font: {
+							weight: 700;
+						}
+						text: {
+							align: center;
+							transform: uppercase;
+						}
+						a {
+							color: $white;
+							padding: $ten $fifty;
+							&:hover {
+								background: $light-gray;
+								color: $gray;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
