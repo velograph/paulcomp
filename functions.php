@@ -134,3 +134,11 @@ function my_login_logo_url_title() {
     return 'Wildeor';
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+/**
+ * Declare Woocommerce support
+ */
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
