@@ -1,9 +1,96 @@
+.utility-header {
+	font-size: 12px;
+	svg {
+		fill: $white;
+		vertical-align: middle;
+		width: 12px;
+	}
+	a {
+		color: $white;
+	}
+}
+
+.cart-count {
+	font-weight: 700;
+}
+
 .mobile-header {
+	@include outer-container;
+	background: $black;
 	display: block;
 	@include media( $large-screen ) {
 		display: none;
 	}
+	.site-branding {
+		@include span-columns(4);
+		@include shift(4);
+		margin-bottom: $fifteen;
+		margin-top: $twentyfive;
+	}
+	.menu-hook-container {
+		@include span-columns(2);
+		@include shift(5);
+		margin-bottom: $ten;
+		.menu-hook {
+			color: $white;
+			font: {
+				size: 12px;
+				weight: bold;
+			}
+			text-transform: uppercase;
+		}
+	}
+	.slide-out {
+		clear: both;
+		display: block;
+	}
+	.mobile-navigation {
+		@include row();
+		padding: $fifteen 0;
+		.main-navigation {
+			@include span-columns(4);
+			@include shift(2);
+			li {
+				font-weight: bold;
+				margin-bottom: $five;
+				text-transform: uppercase;
+				a {
+					color: $white;
+				}
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+			}
+		}
+		.utility-header {
+			@include span-columns(4);
+			text-align: right;
+			.account-link,
+			.cart-link {
+				display: block;
+			}
+			.account-link {
+				margin-bottom: $five;
+			}
+		}
+	}
+	.search-form {
+		@include row();
+		label {
+			@include span-columns(8);
+			@include shift(2);
+			margin-bottom: 0;
+		}
+		input {
+			background: {
+				image: url('../images/magnifying_glass.svg');
+			}
+			margin-bottom: $fifteen;
+			padding: $five $five $five $twentyfive;
+		}
+	}
 }
+
 .desktop-header {
 	background: $black;
 	border-bottom: $five solid $orange;
@@ -14,18 +101,7 @@
 	.inner-container {
 		@include outer-container;
 		padding-top: $fifteen;
-		svg {
-			fill: $white;
-		}
 		.utility-header {
-			font-size: 12px;
-			svg {
-				vertical-align: middle;
-				width: 12px;
-			}
-			a {
-				color: $white;
-			}
 			.account-link {
 				@include shift(8);
 				@include span-columns(1);
@@ -41,9 +117,6 @@
 				text-align: right;
 				.cart-title {
 					text-decoration: underline;
-				}
-				.cart-count {
-					font-weight: 700;
 				}
 			}
 			.search-form {
@@ -79,7 +152,6 @@
 							transform: uppercase;
 						}
 						a {
-							color: $white;
 							padding: $ten $fifty;
 							&:hover {
 								background: $light-gray;
