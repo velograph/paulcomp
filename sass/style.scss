@@ -12,14 +12,15 @@
 * License:     Commercial
 */
 
+@import "variables";
 @import "bourbon/bourbon";
 @import "base/grid-settings";
 @import "neat/neat";
 @import "base/base";
 
-@import "variables";
 @import "header";
 @import "footer";
+@import "front_page";
 
 body {
 	color: $dark-gray;
@@ -79,4 +80,9 @@ body {
 		border-radius: 0;
 		text-transform: none;
 	}
+}
+
+.page-content {
+	@include outer-container;
+	padding: $twentyfive 0;
 }

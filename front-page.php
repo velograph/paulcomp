@@ -61,6 +61,18 @@ get_header(); ?>
 
 <!-- End Gallery -->
 
+<!-- Begin Page Lead In -->
+
+	<section class="page-lead-in page-content">
+		<?php the_field('lead_in_copy'); ?>
+
+		<div class="lead-in-title">
+			<h1><?php the_field('lead_in_title'); ?></h1>
+		</div>
+	</section>
+
+<!-- End Page Lead In -->
+
 <?php endwhile; // end of the loop. ?>
 
 <?php get_footer(); ?>
