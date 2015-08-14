@@ -151,6 +151,7 @@
 							transform: uppercase;
 						}
 						a {
+							color: $white;
 							padding: $ten $fifty;
 							&:hover {
 								background: $light-gray;
