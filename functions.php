@@ -146,3 +146,8 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
+
+add_image_size( 'portal-mobile', '480', '349', 'true' );
+add_image_size( 'portal-tablet', '768', '558', 'true' );
+add_image_size( 'portal-desktop', '1280', '930', 'true' );
+add_image_size( 'portal-retina', '2560', '1860', 'true' );
