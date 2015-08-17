@@ -67,4 +67,23 @@
 			}
 		}
 	}
+	.story-lead-in {
+		@include outer-container;
+		h1, h4 {
+			text-align: center;
+		}
+		.story-image {
+			@include media( $large-screen ) {
+				@include span-columns(4);
+			}
+		}
+		.story-content {
+			@include media( $large-screen ) {
+				@include span-columns(8);
+				p {
+					@include columns(2 8em);
+				}
+			}
+		}
+	}
 }

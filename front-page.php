@@ -192,7 +192,7 @@ get_header(); ?>
 					</li>
 				</ul>
 				<div id="components-tab">
-					<div class="portal-container">
+					<div class="portal-container page-content">
 
 						<?php // Components ?>
 						<?php
@@ -226,7 +226,7 @@ get_header(); ?>
 				</div>
 
 				<div id="spare-parts-tab">
-					<div class="portal-container">
+					<div class="portal-container page-content">
 
 						<?php // spare Parts ?>
 						<?php
@@ -260,7 +260,7 @@ get_header(); ?>
 				</div>
 
 				<div id="merchandise-tab">
-					<div class="portal-container">
+					<div class="portal-container page-content">
 
 						<?php // Merchandise ?>
 						<?php
@@ -300,6 +300,70 @@ get_header(); ?>
 	</section>
 
 <!-- End Shop Sections -->
+
+<!-- Begin Story Section -->
+
+	<section class="story-lead-in-container">
+		<?php $mobile_page_banner = wp_get_attachment_image_src(get_field('story_leading_image'), 'mobile-page-banner'); ?>
+		<?php $tablet_page_banner = wp_get_attachment_image_src(get_field('story_leading_image'), 'tablet-page-banner'); ?>
+		<?php $desktop_page_banner = wp_get_attachment_image_src(get_field('story_leading_image'), 'desktop-page-banner'); ?>
+		<?php $retina_page_banner = wp_get_attachment_image_src(get_field('story_leading_image'), 'retina-page-banner'); ?>
+
+		<picture class="full-width-image">
+			<!--[if IE 9]><video style="display: none"><![endif]-->
+			<source
+				srcset="<?php echo $mobile_page_banner[0]; ?>"
+				media="(max-width: 500px)" />
+			<source
+				srcset="<?php echo $tablet_page_banner[0]; ?>"
+				media="(max-width: 860px)" />
+			<source
+				srcset="<?php echo $desktop_page_banner[0]; ?>"
+				media="(max-width: 1180px)" />
+			<source
+				srcset="<?php echo $retina_page_banner[0]; ?>"
+				media="(min-width: 1181px)" />
+			<!--[if IE 9]></video><![endif]-->
+			<img srcset="<?php echo $desktop_page_banner[0]; ?>">
+		</picture>
+
+		<div class="story-lead-in page-content">
+			<h1><?php the_field('story_title'); ?></h1>
+			<h4><?php the_field('story_tagline'); ?></h4>
+
+			<div class="story-image">
+				<?php $mobile_page_banner = wp_get_attachment_image_src(get_field('story_supporting_image'), 'mobile-page-banner'); ?>
+				<?php $tablet_page_banner = wp_get_attachment_image_src(get_field('story_supporting_image'), 'tablet-page-banner'); ?>
+				<?php $desktop_page_banner = wp_get_attachment_image_src(get_field('story_supporting_image'), 'desktop-page-banner'); ?>
+				<?php $retina_page_banner = wp_get_attachment_image_src(get_field('story_supporting_image'), 'retina-page-banner'); ?>
+
+				<picture>
+					<!--[if IE 9]><video style="display: none"><![endif]-->
+					<source
+						srcset="<?php echo $mobile_page_banner[0]; ?>"
+						media="(max-width: 500px)" />
+					<source
+						srcset="<?php echo $tablet_page_banner[0]; ?>"
+						media="(max-width: 860px)" />
+					<source
+						srcset="<?php echo $desktop_page_banner[0]; ?>"
+						media="(max-width: 1180px)" />
+					<source
+						srcset="<?php echo $retina_page_banner[0]; ?>"
+						media="(min-width: 1181px)" />
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="<?php echo $desktop_page_banner[0]; ?>">
+				</picture>
+			</div>
+
+			<div class="story-content">
+				<?php the_field('story_content'); ?>
+			</div>
+		</div>
+
+	</section><!-- .story-lead-in -->
+
+<!-- End Story Section -->
 
 <?php endwhile; // end of the loop. ?>
 
