@@ -25,7 +25,7 @@
 body {
 	color: $dark-gray;
 	font: {
-		family: Helvetica;
+		family: $source_pro;
 		weight: 300;
 	}
 	margin: 0;
@@ -79,6 +79,9 @@ body {
 		background: $blue;
 		border-radius: 0;
 		text-transform: none;
+	}
+	.content-container {
+		z-index: 0; // Ensures the entire container is below the header.
 	}
 }
 

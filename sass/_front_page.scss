@@ -4,4 +4,67 @@
 			text-align: center;
 		}
 	}
+	.leading-shop-image {
+		@include row();
+		position: relative;
+		img {
+			float: left;
+		}
+		.overlay {
+			height: 100%;
+			opacity: 0;
+			@include transition(opacity 0.2s ease-in-out);
+			width: 100%;
+			.thumb-title {
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				@include transform( translate(-50%,-50%) );
+			}
+		}
+		:hover {
+			.overlay {
+				opacity: 1;
+			}
+		}
+	}
+	.shop-portals {
+		.tab-trigger {
+			position: relative;
+			@include media( $large-screen ) {
+				@include span-columns(4, table);
+				@include omega;
+			}
+			img {
+				float: left;
+			}
+			.overlay {
+				background: $overlay;
+				height: 100%;
+				opacity: 0;
+				position: absolute;
+				@include transition(opacity 0.2s ease-in-out);
+				width: 100%;
+				.thumb-title {
+					left: 50%;
+					position: absolute;
+					top: 50%;
+					@include transform( translate(-50%,-50%) );
+				}
+			}
+			:hover {
+				.overlay {
+					opacity: 1;
+				}
+			}
+		}
+		.portal-container {
+			@include outer-container;
+			.portal {
+				@include media( $large-screen ) {
+					@include span-columns(3);
+				}
+			}
+		}
+	}
 }

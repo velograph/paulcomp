@@ -90,6 +90,8 @@ function paulcomp_scripts() {
 
 	wp_enqueue_script( 'paulcomp-site-scripts', get_template_directory_uri() . '/js/site-scripts.js', array(), '20130115', true );
 
+	wp_enqueue_script( 'paulcomp-jQuery', '//code.jquery.com/ui/1.11.4/jquery-ui.js', false, true );
+
 	wp_enqueue_script( 'paulcomp-sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array(), '20130115', true );
 
 	wp_enqueue_script( 'paulcomp-slick', get_template_directory_uri() . '/js/slick.min.js', array(), '20130115', true );
@@ -147,7 +149,27 @@ function woocommerce_support() {
     add_theme_support( 'woocommerce' );
 }
 
-add_image_size( 'portal-mobile', '480', '349', 'true' );
-add_image_size( 'portal-tablet', '768', '558', 'true' );
-add_image_size( 'portal-desktop', '1280', '930', 'true' );
-add_image_size( 'portal-retina', '2560', '1860', 'true' );
+add_image_size( 'portal-mobile', '480', '360', 'true' );
+add_image_size( 'portal-tablet', '768', '576', 'true' );
+add_image_size( 'portal-desktop', '1280', '960', 'true' );
+add_image_size( 'portal-retina', '2400', '1800', 'true' );
+
+add_image_size( 'portal-page-banner', '480', '260', 'true' );
+add_image_size( 'portal-page-banner', '768', '356', 'true' );
+add_image_size( 'portal-page-banner', '1280', '430', 'true' );
+add_image_size( 'portal-page-banner', '2400', '800', 'true' );
+
+/**
+ * TypeKit Fonts
+ */
+function theme_typekit() {
+    wp_enqueue_script( 'theme_typekit', '//use.typekit.net/bpk6lyp.js');
+}
+add_action( 'wp_enqueue_scripts', 'theme_typekit' );
+
+function theme_typekit_inline() {
+  if ( wp_script_is( 'theme_typekit', 'done' ) ) { ?>
+  	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+<?php }
+}
+add_action( 'wp_head', 'theme_typekit_inline' );
