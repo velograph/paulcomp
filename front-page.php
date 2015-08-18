@@ -22,9 +22,11 @@ get_header(); ?>
 		  lazyLoad: 'ondemand',
 	  });
 
-	  if (jQuery(window).width() > 860) {
+	//   if (jQuery(window).width() > 860) {
 		  jQuery( "#tabs" ).tabs();
-	  }
+	//   }
+
+	  jQuery('.portal img').matchHeight();
 
 	});
 
@@ -46,19 +48,19 @@ get_header(); ?>
 				<picture>
 					<!--[if IE 9]><video style="display: none"><![endif]-->
 					<source
-						srcset="<?php echo $image['sizes']['portal-mobile']; ?>"
+						srcset="<?php echo $image['sizes']['page-banner-mobile']; ?>"
 						media="(max-width: 500px)" />
 					<source
-						srcset="<?php echo $image['sizes']['portal-tablet']; ?>"
+						srcset="<?php echo $image['sizes']['page-banner-tablet']; ?>"
 						media="(max-width: 860px)" />
 					<source
-						srcset="<?php echo $image['sizes']['portal-desktop']; ?>"
+						srcset="<?php echo $image['sizes']['page-banner-desktop']; ?>"
 						media="(max-width: 1180px)" />
 					<source
-						srcset="<?php echo $image['sizes']['portal-retina']; ?>"
+						srcset="<?php echo $image['sizes']['page-banner-retina']; ?>"
 						media="(min-width: 1181px)" />
 					<!--[if IE 9]></video><![endif]-->
-					<img srcset="<?php echo $image['sizes']['portal-desktop']; ?>">
+					<img srcset="<?php echo $image['sizes']['page-banner-desktop']; ?>">
 				</picture>
 
 			<?php endforeach; ?>
@@ -86,10 +88,10 @@ get_header(); ?>
 
 		<div class="leading-shop-image">
 
-			<?php $mobile_page_banner = wp_get_attachment_image_src(get_field('main_shop_image'), 'mobile-page-banner'); ?>
-			<?php $tablet_page_banner = wp_get_attachment_image_src(get_field('main_shop_image'), 'tablet-page-banner'); ?>
-			<?php $desktop_page_banner = wp_get_attachment_image_src(get_field('main_shop_image'), 'desktop-page-banner'); ?>
-			<?php $retina_page_banner = wp_get_attachment_image_src(get_field('main_shop_image'), 'retina-page-banner'); ?>
+			<?php $mobile_page_banner = wp_get_attachment_image_src(get_field('main_shop_image'), 'page-banner-mobile'); ?>
+			<?php $tablet_page_banner = wp_get_attachment_image_src(get_field('main_shop_image'), 'page-banner-tablet'); ?>
+			<?php $desktop_page_banner = wp_get_attachment_image_src(get_field('main_shop_image'), 'page-banner-desktop'); ?>
+			<?php $retina_page_banner = wp_get_attachment_image_src(get_field('main_shop_image'), 'page-banner-retina'); ?>
 
 			<a href="/shop">
 				<picture>
@@ -139,9 +141,9 @@ get_header(); ?>
 							<img src="<?php echo wp_get_attachment_url( $img_id ); ?>" alt="category image">
 
 							<div class="overlay">
-								<h1 class="thumb-title">
+								<h2 class="thumb-title">
 									Components
-								</h1>
+								</h2>
 							</div>
 
 						</a>
@@ -161,9 +163,9 @@ get_header(); ?>
 							<img src="<?php echo wp_get_attachment_url( $img_id ); ?>" alt="category image">
 
 							<div class="overlay">
-								<h1 class="thumb-title">
+								<h2 class="thumb-title">
 									Spare Parts
-								</h1>
+								</h2>
 							</div>
 
 						</a>
@@ -183,9 +185,9 @@ get_header(); ?>
 							<img src="<?php echo wp_get_attachment_url( $img_id ); ?>" alt="category image">
 
 							<div class="overlay">
-								<h1 class="thumb-title">
+								<h2 class="thumb-title">
 									Merchandise
-								</h1>
+								</h2>
 							</div>
 
 						</a>
@@ -212,10 +214,9 @@ get_header(); ?>
 
 								<a href="<?php echo $term_link; ?>">
 									<img src="<?php echo $cat_thumb_url; ?>" />
-								</a>
-
-								<a href="<?php echo $term_link; ?>">
-									<?php echo $prod_cat->name; ?>
+									<h3>
+										<?php echo $prod_cat->name; ?>
+									</h3>
 								</a>
 
 							</div>
@@ -240,19 +241,18 @@ get_header(); ?>
 								$cat_thumb_id = get_woocommerce_term_meta( $prod_cat->term_id, 'thumbnail_id', true );
 								$cat_thumb_url = wp_get_attachment_thumb_url( $cat_thumb_id );
 								$term_link = get_term_link( $prod_cat, 'product_cat' );
-						?>
+							?>
 
-						<div class="portal">
+							<div class="portal">
 
-							<a href="<?php echo $term_link; ?>">
-								<img src="<?php echo $cat_thumb_url; ?>" />
-							</a>
+								<a href="<?php echo $term_link; ?>">
+									<img src="<?php echo $cat_thumb_url; ?>" />
+									<h3>
+										<?php echo $prod_cat->name; ?>
+									</h3>
+								</a>
 
-							<a href="<?php echo $term_link; ?>">
-								<h3><?php the_title(); ?></h3>
-							</a>
-
-						</div>
+							</div>
 
 						<?php endforeach; wp_reset_query(); ?>
 
@@ -274,19 +274,18 @@ get_header(); ?>
 								$cat_thumb_id = get_woocommerce_term_meta( $prod_cat->term_id, 'thumbnail_id', true );
 								$cat_thumb_url = wp_get_attachment_thumb_url( $cat_thumb_id );
 								$term_link = get_term_link( $prod_cat, 'product_cat' );
-						?>
+							?>
 
-						<div class="portal">
+							<div class="portal">
 
-							<a href="<?php echo $term_link; ?>">
-								<img src="<?php echo $cat_thumb_url; ?>" />
-							</a>
+								<a href="<?php echo $term_link; ?>">
+									<img src="<?php echo $cat_thumb_url; ?>" />
+									<h3>
+										<?php echo $prod_cat->name; ?>
+									</h3>
+								</a>
 
-							<a href="<?php echo $term_link; ?>">
-								<h3><?php the_title(); ?></h3>
-							</a>
-
-						</div>
+							</div>
 
 						<?php endforeach; wp_reset_query(); ?>
 
@@ -304,10 +303,10 @@ get_header(); ?>
 <!-- Begin Story Section -->
 
 	<section class="story-lead-in-container">
-		<?php $mobile_page_banner = wp_get_attachment_image_src(get_field('story_leading_image'), 'mobile-page-banner'); ?>
-		<?php $tablet_page_banner = wp_get_attachment_image_src(get_field('story_leading_image'), 'tablet-page-banner'); ?>
-		<?php $desktop_page_banner = wp_get_attachment_image_src(get_field('story_leading_image'), 'desktop-page-banner'); ?>
-		<?php $retina_page_banner = wp_get_attachment_image_src(get_field('story_leading_image'), 'retina-page-banner'); ?>
+		<?php $mobile_page_banner = wp_get_attachment_image_src(get_field('story_leading_image'), 'page-banner-mobile'); ?>
+		<?php $tablet_page_banner = wp_get_attachment_image_src(get_field('story_leading_image'), 'page-banner-tablet'); ?>
+		<?php $desktop_page_banner = wp_get_attachment_image_src(get_field('story_leading_image'), 'page-banner-desktop'); ?>
+		<?php $retina_page_banner = wp_get_attachment_image_src(get_field('story_leading_image'), 'page-banner-retina'); ?>
 
 		<picture class="full-width-image">
 			<!--[if IE 9]><video style="display: none"><![endif]-->
@@ -332,10 +331,10 @@ get_header(); ?>
 			<h4><?php the_field('story_tagline'); ?></h4>
 
 			<div class="story-image">
-				<?php $mobile_page_banner = wp_get_attachment_image_src(get_field('story_supporting_image'), 'mobile-page-banner'); ?>
-				<?php $tablet_page_banner = wp_get_attachment_image_src(get_field('story_supporting_image'), 'tablet-page-banner'); ?>
-				<?php $desktop_page_banner = wp_get_attachment_image_src(get_field('story_supporting_image'), 'desktop-page-banner'); ?>
-				<?php $retina_page_banner = wp_get_attachment_image_src(get_field('story_supporting_image'), 'retina-page-banner'); ?>
+				<?php $mobile_page_banner = wp_get_attachment_image_src(get_field('story_supporting_image'), 'portal-mobile'); ?>
+				<?php $tablet_page_banner = wp_get_attachment_image_src(get_field('story_supporting_image'), 'portal-tablet'); ?>
+				<?php $desktop_page_banner = wp_get_attachment_image_src(get_field('story_supporting_image'), 'portal-desktop'); ?>
+				<?php $retina_page_banner = wp_get_attachment_image_src(get_field('story_supporting_image'), 'portal-retina'); ?>
 
 				<picture>
 					<!--[if IE 9]><video style="display: none"><![endif]-->

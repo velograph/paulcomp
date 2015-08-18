@@ -1,61 +1,115 @@
 .mailing-signup {
+	@include row();
 	position: relative;
 	.mailing-list-image {
-		height: 100%;
-		position: relative;
-		width: 100%;
 		z-index: 0;
 		img {
 			float: left;
 		}
 	}
-	.mailing-list-form {
+	.signup-form {
+		color: $offwhite;
 		left: 50%;
 		position: absolute;
+		text-align: center;
 		top: 50%;
 		@include transform( translate(-50%, -50%) );
+		width: 100%;
+		h1 {
+			font-size: $h3-font-size / 1.5;
+			margin-bottom: $fifteen;
+			@include media( $large-screen ) {
+				font-size: $h1-font-size;
+				margin-bottom: $twentyfive;
+			}
+		}
+		label[for="epm-email"],
+		input[type="submit"] {
+			display: none;
+		}
+		input[type="email"] {
+			margin: 0 auto $twentyfive;
+			padding: $five $five $five 35px;
+			width: 50%;
+			background: {
+				image: url('../images/envelope.svg');
+			}
+		}
+		h4 {
+			padding: 0 $twentyfive;
+		}
 	}
 }
 .instagram-feed {
-	.sbi {
-		float: left;
+	#sb_instagram {
+		margin: 0 auto -5px;
+		img {
+			float: left;
+		}
 	}
 }
 .top-footer {
+	@include row();
 	background: $dark-gray;
-	color: $white;
+	color: $offwhite;
+	padding: $twentyfive 0;
+	text-align: center;
+	@include media( $large-screen ) {
+		padding: $fifty 0;
+		text-align: left;
+	}
 	.outer-container {
 		@include outer-container;
 		a {
-			color: $white;
+			color: $offwhite;
 			&:hover {
-				color: $dark-gray;
+				color: $white;
 			}
 		}
 		.paul-logo {
-			@include span-columns(3);
-			text-align: center;
-			svg {
-				width: 50%;
-			}
-		}
-		.contact-info {
-			@include span-columns(3);
-		}
-		.utility-menu {
-			@include span-columns(3);
-		}
-		.social-media {
-			@include span-columns(3);
-			.icon {
+			@include media( $large-screen ) {
 				@include span-columns(2);
 			}
 			svg {
-				fill: $white;
-				width: $twentyfive;
+				margin-bottom: $twentyfive;
+				width: 25%;
+				@include media( $large-screen ) {
+					margin: $ten 0 0 0;
+					width: 75%;
+				}
+			}
+		}
+		.contact-info {
+			margin-bottom: $twentyfive;
+			@include media( $large-screen ) {
+				@include span-columns(4);
+				margin-bottom: 0;
+			}
+		}
+		.utility-menu {
+			margin-bottom: $twentyfive;
+			@include media( $large-screen ) {
+				@include span-columns(3);
+				margin: 0;
+			}
+		}
+		.social-media {
+			@include media( $large-screen ) {
+				@include span-columns(3);
+			}
+			.icon {
+				@include span-columns(2);
+				&:first-of-type {
+					@include shift(3);
+				}
+			}
+			svg {
+				fill: $offwhite;
+				margin-top: $fifteen;
+				width: $thirty;
 				@include transition(all 0.2s ease-in-out);
 				&:hover {
-					fill: $dark-gray;
+					fill: $white;
 				}
 			}
 		}
@@ -64,7 +118,7 @@
 .bottom-footer {
 	background: $black;
 	border-top: 2px solid $orange;
-	color: $white;
+	color: $offwhite;
 	padding: $ten 0;
 	text-align: center;
 }

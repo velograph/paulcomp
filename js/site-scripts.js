@@ -9,13 +9,12 @@ jQuery(document).ready(function(){
 		});
 	}
 
-	if (jQuery(window).width() > 860) {
-
-		// Desktop sticky header
-		jQuery(".desktop-header").sticky({
-			topSpacing: 0
-		});
-
-	}
+// 	if (jQuery(window).width() > 860) {
+//
+// 		// Desktop sticky header
+// 		jQuery(".desktop-header").sticky({
+// 			topSpacing: 0
+// 		});
+// 	}
 
 });

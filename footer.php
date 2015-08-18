@@ -16,10 +16,10 @@
 
 		<div class="mailing-list-image">
 
-			<?php $mobile_page_banner = wp_get_attachment_image_src(get_field('mailing_list_background_image', 75), 'mobile-page-banner'); ?>
-			<?php $tablet_page_banner = wp_get_attachment_image_src(get_field('mailing_list_background_image', 75), 'mobile-page-banner'); ?>
-			<?php $desktop_page_banner = wp_get_attachment_image_src(get_field('mailing_list_background_image', 75), 'mobile-page-banner'); ?>
-			<?php $retina_page_banner = wp_get_attachment_image_src(get_field('mailing_list_background_image', 75), 'mobile-page-banner'); ?>
+			<?php $mobile_page_banner = wp_get_attachment_image_src(get_field('mailing_list_background_image', 75), 'page-banner-mobile'); ?>
+			<?php $tablet_page_banner = wp_get_attachment_image_src(get_field('mailing_list_background_image', 75), 'page-banner-tablet'); ?>
+			<?php $desktop_page_banner = wp_get_attachment_image_src(get_field('mailing_list_background_image', 75), 'page-banner-desktop'); ?>
+			<?php $retina_page_banner = wp_get_attachment_image_src(get_field('mailing_list_background_image', 75), 'page-banner-retina'); ?>
 
 			<picture>
 				<!--[if IE 9]><video style="display: none"><![endif]-->
@@ -41,9 +41,12 @@
 
 		</div>
 
-		<div class="mailing-list-form">
-			<h1>Mailing List</h1>
+		<div class="signup-form">
+			<h1>Stay in Touch</h1>
+			<?php echo do_shortcode('[epm_mailchimp]'); ?>
+			<h4><?php the_field('mailing_list_tagline', 75); ?></h4>
 		</div>
+
 	</section>
 
 <!-- End Mailing Signup -->
@@ -100,7 +103,7 @@
 				</svg>
 			</div>
 			<div class="contact-info">
-				<h4>Paul Component Engineering</h4>
+				<h5>Paul Component Engineering</h5>
 				<ul>
 					<li>
 						<a href="mailto:info@paulcomp.com">info@paulcomp.com</a>
@@ -117,11 +120,11 @@
 				</ul>
 			</div>
 			<div class="utility-menu">
-				<h4>Support</h4>
+				<h5>Support</h5>
 				<?php wp_nav_menu( array( 'theme_location' => 'footer-utility' ) ); ?>
 			</div>
 			<div class="social-media">
-				<h4>Follow Along</h4>
+				<h5>Follow Along</h5>
 				<div class="instagram icon">
 					<a href="<?php echo the_field('instagram', 75); ?>">
 						<svg version="1.1" id="Instagram" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

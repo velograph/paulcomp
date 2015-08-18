@@ -1,12 +1,12 @@
 .utility-header {
-	font-size: 12px;
+	font-size: 14px;
 	svg {
-		fill: $white;
+		fill: $offwhite;
 		vertical-align: middle;
 		width: 12px;
 	}
 	a {
-		color: $white;
+		color: $offwhite;
 	}
 }
 
@@ -31,8 +31,9 @@
 		@include span-columns(2);
 		@include shift(5);
 		margin-bottom: $ten;
+		text-align: center;
 		.menu-hook {
-			color: $white;
+			color: $offwhite;
 			font: {
 				size: 12px;
 				weight: bold;
@@ -54,7 +55,7 @@
 				margin-bottom: $five;
 				text-transform: uppercase;
 				a {
-					color: $white;
+					color: $offwhite;
 				}
 				&:last-of-type {
 					margin-bottom: 0;
@@ -152,8 +153,9 @@
 							transform: uppercase;
 						}
 						a {
-							color: $white;
+							color: $offwhite;
 							padding: $ten $fifty;
+							font-size: 24px;
 							&:hover {
 								background: $light-gray;
 								color: $gray;

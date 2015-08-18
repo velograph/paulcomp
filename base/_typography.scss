@@ -20,28 +20,69 @@ h6 {
 }
 
 h1 {
-    color: $orange;
     font: {
-        size: $h1-font-size;
+        size: $h1-font-size / 1.5;
         weight: 700;
     }
     text-transform: uppercase;
+    @include media( $large-screen ) {
+        font: {
+            size: $h1-font-size;
+            weight: 700;
+        }
+    }
 }
 
 h2 {
-  font-size: $h2-font-size;
+    font: {
+        size: $h2-font-size / 1.5;
+        weight: 700;
+    }
+    text-transform: uppercase;
+    @include media( $large-screen ) {
+        font: {
+            size: $h2-font-size;
+        }
+    }
 }
 
 h3 {
-  font-size: $h3-font-size;
+    font: {
+        size: $h3-font-size / 1.5;
+        weight: 700;
+    }
+    text-transform: uppercase;
+    @include media( $large-screen ) {
+        font: {
+            size: $h3-font-size;
+        }
+    }
 }
 
 h4 {
-  font-size: $h4-font-size;
+    font: {
+        size: $h4-font-size / 1.5;
+        style: italic;
+        weight: 300;
+    }
+    @include media( $large-screen ) {
+        font: {
+            size: $h4-font-size;
+        }
+    }
 }
 
 h5 {
-  font-size: $h5-font-size;
+    font: {
+        size: $h5-font-size / 1.5;
+        weight: 700;
+    }
+    text-transform: uppercase;
+    @include media( $large-screen ) {
+        font: {
+            size: $h5-font-size;
+        }
+    }
 }
 
 h6 {

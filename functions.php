@@ -97,6 +97,8 @@ function paulcomp_scripts() {
 
 	wp_enqueue_script( 'paulcomp-slick', get_template_directory_uri() . '/js/slick.min.js', array(), '20130115', true );
 
+	wp_enqueue_script( 'paulcomp-matchHeight', get_template_directory_uri() . '/js/matchHeight.min.js', array(), '20130115', true );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -155,10 +157,10 @@ add_image_size( 'portal-tablet', '768', '576', 'true' );
 add_image_size( 'portal-desktop', '1280', '960', 'true' );
 add_image_size( 'portal-retina', '2400', '1800', 'true' );
 
-add_image_size( 'portal-page-banner', '480', '260', 'true' );
-add_image_size( 'portal-page-banner', '768', '356', 'true' );
-add_image_size( 'portal-page-banner', '1280', '430', 'true' );
-add_image_size( 'portal-page-banner', '2400', '800', 'true' );
+add_image_size( 'page-banner-mobile', '480', '300', 'true' );
+add_image_size( 'page-banner-tablet', '768', '356', 'true' );
+add_image_size( 'page-banner-desktop', '1280', '430', 'true' );
+add_image_size( 'page-banner-retina', '2400', '800', 'true' );
 
 /**
  * TypeKit Fonts

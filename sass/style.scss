@@ -13,6 +13,7 @@
 */
 
 @import "variables";
+@import "slick";
 @import "bourbon/bourbon";
 @import "base/grid-settings";
 @import "neat/neat";
@@ -66,7 +67,7 @@ body {
 		}
 	}
 	select {
-		background: $white;
+		background: $offwhite;
 		border-color: #c4c4c4;
 		height: $thirty;
 		width: 100%;
@@ -87,5 +88,62 @@ body {
 
 .page-content {
 	@include outer-container;
-	padding: $twentyfive 0;
+	padding: $fifty $twentyfive;
+	@include media( $large-screen ) {
+		padding: $fifty 0;
+	}
+}
+
+.shop-portals {
+	.tab-trigger {
+		position: relative;
+		@include span-columns(4, table);
+		@include omega;
+		img {
+			float: left;
+		}
+		.overlay {
+			background: $overlay;
+			height: 100%;
+			opacity: 0;
+			position: absolute;
+			@include transition(opacity 0.2s ease-in-out);
+			width: 100%;
+			.thumb-title {
+				bottom: $fifty;
+				color: $black;
+				position: absolute;
+				left: 50%;
+				@include transform( translate(-50%,-50%) );
+				@include media( $large-screen ) {
+					position: absolute;
+					top: 50%;
+				}
+			}
+		}
+		:hover {
+			.overlay {
+				opacity: 1;
+			}
+		}
+	}
+	.portal-container {
+		@include outer-container;
+		.portal {
+			position: relative;
+			text-align: center;
+			@include media( $large-screen ) {
+				@include span-columns(4);
+			}
+			img {
+				width: 50%;
+			}
+			a {
+				color: $black;
+			}
+			h3 {
+				margin-top: $twentyfive;
+			}
+		}
+	}
 }

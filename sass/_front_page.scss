@@ -1,7 +1,54 @@
 .home {
+	// Slider styling
+	.slick-slider {
+		.slick-track {
+			.slick-slide {
+				position: relative;
+				.slide-caption {
+					bottom: $twentyfive;
+					padding-right: $twentyfive;
+					position: absolute;
+					@include media( $large-screen ) {
+						@include span-columns(6);
+						@include shift(6);
+					}
+				}
+			}
+		}
+		.slick-dots {
+			bottom: $ten;
+			right: $ten;
+			position: absolute;
+			li {
+				display: inline-block;
+				margin-right: $five;
+				button {
+					background: rgba(255,255,255,.2);
+					border-radius: $fifty;
+					height: $ten;
+					padding: 0;
+					text-indent: -9999px;
+					width: $ten;
+				}
+				&.slick-active {
+					button {
+						background: rgba(255,255,255,.5);
+					}
+				}
+				&:hover {
+					button {
+						background: rgba(255,255,255,.5);
+					}
+				}
+			}
+		}
+	}
 	.page-content {
 		.lead-in-title {
 			text-align: center;
+			h1 {
+				color: $orange;
+			}
 		}
 	}
 	.leading-shop-image {
@@ -11,65 +58,37 @@
 			float: left;
 		}
 		.overlay {
+			display: none;
 			height: 100%;
-			opacity: 0;
-			@include transition(opacity 0.2s ease-in-out);
 			width: 100%;
+			@include media( $large-screen ) {
+				@include row();
+			}
 			.thumb-title {
+				color: $white;
 				left: 50%;
 				position: absolute;
 				top: 50%;
+				@include transition(all 0.2s ease-in-out);
 				@include transform( translate(-50%,-50%) );
 			}
 		}
 		:hover {
 			.overlay {
-				opacity: 1;
-			}
-		}
-	}
-	.shop-portals {
-		.tab-trigger {
-			position: relative;
-			@include media( $large-screen ) {
-				@include span-columns(4, table);
-				@include omega;
-			}
-			img {
-				float: left;
-			}
-			.overlay {
-				background: $overlay;
-				height: 100%;
-				opacity: 0;
-				position: absolute;
-				@include transition(opacity 0.2s ease-in-out);
-				width: 100%;
 				.thumb-title {
-					left: 50%;
-					position: absolute;
-					top: 50%;
-					@include transform( translate(-50%,-50%) );
-				}
-			}
-			:hover {
-				.overlay {
-					opacity: 1;
-				}
-			}
-		}
-		.portal-container {
-			@include outer-container;
-			.portal {
-				@include media( $large-screen ) {
-					@include span-columns(3);
+					color: $gray;
 				}
 			}
 		}
 	}
 	.story-lead-in {
 		@include outer-container;
-		h1, h4 {
+		h1 {
+			color: $orange;
+			text-align: center;
+		}
+		h4 {
+			margin-bottom: $fifty;
 			text-align: center;
 		}
 		.story-image {
