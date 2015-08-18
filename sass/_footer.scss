@@ -1,3 +1,73 @@
+.mailing-signup {
+	position: relative;
+	.mailing-list-image {
+		height: 100%;
+		position: relative;
+		width: 100%;
+		z-index: 0;
+		img {
+			float: left;
+		}
+	}
+	.mailing-list-form {
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		@include transform( translate(-50%, -50%) );
+	}
+}
+.instagram-feed {
+	.sbi {
+		float: left;
+	}
+}
+.top-footer {
+	background: $dark-gray;
+	color: $white;
+	.outer-container {
+		@include outer-container;
+		a {
+			color: $white;
+			&:hover {
+				color: $dark-gray;
+			}
+		}
+		.paul-logo {
+			@include span-columns(3);
+			text-align: center;
+			svg {
+				width: 50%;
+			}
+		}
+		.contact-info {
+			@include span-columns(3);
+		}
+		.utility-menu {
+			@include span-columns(3);
+		}
+		.social-media {
+			@include span-columns(3);
+			.icon {
+				@include span-columns(2);
+			}
+			svg {
+				fill: $white;
+				width: $twentyfive;
+				@include transition(all 0.2s ease-in-out);
+				&:hover {
+					fill: $dark-gray;
+				}
+			}
+		}
+	}
+}
+.bottom-footer {
+	background: $black;
+	border-top: 2px solid $orange;
+	color: $white;
+	padding: $ten 0;
+	text-align: center;
+}
 .footer {
 	@include outer-container;
 }
