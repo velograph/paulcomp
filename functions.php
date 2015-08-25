@@ -176,3 +176,19 @@ function theme_typekit_inline() {
 <?php }
 }
 add_action( 'wp_head', 'theme_typekit_inline' );
+
+// Disable reviews on products
+add_filter( 'woocommerce_product_tabs', 'wcs_woo_remove_reviews_tab', 98 );
+function wcs_woo_remove_reviews_tab($tabs) {
+ unset($tabs['reviews']);
+ return $tabs;
+}
+
+// Remove Woo styling
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
+add_role('dealer', 'Dealer', array(
+    'read' => true, // True allows that capability
+    'edit_posts' => true,
+    'delete_posts' => false, // Use false to explicitly deny
+));

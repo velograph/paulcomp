@@ -44,7 +44,7 @@
 		<div class="signup-form">
 			<h1>Stay in Touch</h1>
 			<?php echo do_shortcode('[epm_mailchimp]'); ?>
-			<h4><?php the_field('mailing_list_tagline', 75); ?></h4>
+			<blockquote><?php the_field('mailing_list_tagline', 75); ?></blockquote>
 		</div>
 
 	</section>

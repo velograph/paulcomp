@@ -24,6 +24,7 @@ h1 {
         size: $h1-font-size / 1.5;
         weight: 700;
     }
+    letter-spacing: 2px;
     text-transform: uppercase;
     @include media( $large-screen ) {
         font: {
@@ -38,6 +39,7 @@ h2 {
         size: $h2-font-size / 1.5;
         weight: 700;
     }
+    letter-spacing: 1px;
     text-transform: uppercase;
     @include media( $large-screen ) {
         font: {
@@ -49,9 +51,8 @@ h2 {
 h3 {
     font: {
         size: $h3-font-size / 1.5;
-        weight: 700;
+        weight: 300;
     }
-    text-transform: uppercase;
     @include media( $large-screen ) {
         font: {
             size: $h3-font-size;
@@ -62,9 +63,10 @@ h3 {
 h4 {
     font: {
         size: $h4-font-size / 1.5;
-        style: italic;
-        weight: 300;
+        weight: 700;
     }
+    letter-spacing: 1px;
+    text-transform: uppercase;
     @include media( $large-screen ) {
         font: {
             size: $h4-font-size;
@@ -77,6 +79,7 @@ h5 {
         size: $h5-font-size / 1.5;
         weight: 700;
     }
+    letter-spacing: 2px;
     text-transform: uppercase;
     @include media( $large-screen ) {
         font: {
@@ -86,11 +89,46 @@ h5 {
 }
 
 h6 {
-  font-size: $h6-font-size;
+    font: {
+        size: $h6-font-size / 1.5;
+        style: italic;
+        weight: 400;
+    }
+    @include media( $large-screen ) {
+        font: {
+            size: $h6-font-size;
+        }
+    }
+}
+
+.lead-in-copy {
+    p {
+        font: {
+            size: $h4-font-size / 1.5;
+            weight: 300;
+        }
+        @include media( $large-screen ) {
+            font: {
+                size: $h4-font-size;
+            }
+        }
+    }
 }
 
 p {
-  margin: 0 0 ($base-spacing / 2);
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 0 ($base-spacing / 2);
+}
+
+small {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+caption {
+    font-size: 12px;
+    font-style: italic;
 }
 
 a {
@@ -123,10 +161,9 @@ picture {
 }
 
 blockquote {
-  border-left: 2px solid $base-border-color;
-  color: lighten($base-font-color, 15);
-  margin: $base-spacing 0;
-  padding-left: $base-spacing / 2;
+  font-size: $h3-font-size;
+  font-style: italic;
+  font-weight: 400;
 }
 
 cite {

@@ -73,7 +73,9 @@ get_header(); ?>
 <!-- Begin Page Lead In -->
 
 	<section class="page-lead-in page-content">
-		<?php the_field('lead_in_copy'); ?>
+		<div class="lead-in-copy">
+			<?php the_field('lead_in_copy'); ?>
+		</div>
 
 		<div class="lead-in-title">
 			<h1><?php the_field('lead_in_title'); ?></h1>
@@ -164,14 +166,14 @@ get_header(); ?>
 
 							<div class="overlay">
 								<h2 class="thumb-title">
-									Spare Parts
+									Service Parts
 								</h2>
 							</div>
 
 						</a>
 					</li>
 					<li class="tab-trigger">
-						<a href="#merchandise-tab">
+						<a href="#apparel-accessories-tab">
 							<?php
 								$cat_id = 9;
 								$table_name = $wpdb->prefix . "woocommerce_termmeta";
@@ -186,7 +188,7 @@ get_header(); ?>
 
 							<div class="overlay">
 								<h2 class="thumb-title">
-									Merchandise
+									Apparel &amp; Accessories
 								</h2>
 							</div>
 
@@ -194,6 +196,7 @@ get_header(); ?>
 					</li>
 				</ul>
 				<div id="components-tab">
+					<h2 class="mobile-tab-title">Components</h2>
 					<div class="portal-container page-content">
 
 						<?php // Components ?>
@@ -214,9 +217,9 @@ get_header(); ?>
 
 								<a href="<?php echo $term_link; ?>">
 									<img src="<?php echo $cat_thumb_url; ?>" />
-									<h3>
+									<h6>
 										<?php echo $prod_cat->name; ?>
-									</h3>
+									</h6>
 								</a>
 
 							</div>
@@ -227,9 +230,10 @@ get_header(); ?>
 				</div>
 
 				<div id="spare-parts-tab">
+					<h2 class="mobile-tab-title">Service Parts</h2>
 					<div class="portal-container page-content">
 
-						<?php // spare Parts ?>
+						<?php // Service Parts ?>
 						<?php
 							$prod_categories = get_terms( 'product_cat', array(
 								'orderby' => 'name',
@@ -247,9 +251,9 @@ get_header(); ?>
 
 								<a href="<?php echo $term_link; ?>">
 									<img src="<?php echo $cat_thumb_url; ?>" />
-									<h3>
+									<h4>
 										<?php echo $prod_cat->name; ?>
-									</h3>
+									</h4>
 								</a>
 
 							</div>
@@ -259,10 +263,11 @@ get_header(); ?>
 					</div>
 				</div>
 
-				<div id="merchandise-tab">
+				<div id="apparel-accessories-tab">
+					<h2 class="mobile-tab-title">Apparel &amp; Accessories</h2>
 					<div class="portal-container page-content">
 
-						<?php // Merchandise ?>
+						<?php // apparel-accessories ?>
 						<?php
 							$prod_categories = get_terms( 'product_cat', array(
 								'orderby' => 'name',
@@ -280,9 +285,9 @@ get_header(); ?>
 
 								<a href="<?php echo $term_link; ?>">
 									<img src="<?php echo $cat_thumb_url; ?>" />
-									<h3>
+									<h4>
 										<?php echo $prod_cat->name; ?>
-									</h3>
+									</h4>
 								</a>
 
 							</div>

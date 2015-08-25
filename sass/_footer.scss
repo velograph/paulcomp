@@ -8,35 +8,42 @@
 		}
 	}
 	.signup-form {
-		color: $offwhite;
+		color: $white;
 		left: 50%;
 		position: absolute;
 		text-align: center;
 		top: 50%;
 		@include transform( translate(-50%, -50%) );
 		width: 100%;
-		h1 {
-			font-size: $h3-font-size / 1.5;
-			margin-bottom: $fifteen;
-			@include media( $large-screen ) {
-				font-size: $h1-font-size;
-				margin-bottom: $twentyfive;
+		.epm-sign-up-form {
+			.epm-form-field {
+				margin: 0 auto;
+				width: 50%;
 			}
-		}
-		label[for="epm-email"],
-		input[type="submit"] {
-			display: none;
-		}
-		input[type="email"] {
-			margin: 0 auto $twentyfive;
-			padding: $five $five $five 35px;
-			width: 50%;
-			background: {
-				image: url('../images/envelope.svg');
+			h1 {
+				font-size: $h3-font-size / 1.5;
+				margin-bottom: $fifteen;
+				@include media( $large-screen ) {
+					font-size: $h1-font-size;
+					margin-bottom: $twentyfive;
+				}
 			}
-		}
-		h4 {
-			padding: 0 $twentyfive;
+			label[for="epm-email"],
+			input[type="submit"] {
+				display: none;
+			}
+			input[type="email"] {
+				margin: 0 auto $twentyfive;
+				padding: $five $five $five 35px;
+				width: 50%;
+				background: {
+					image: url('../images/envelope.svg');
+				}
+			}
+			blockquote {
+				color: $white;
+				padding: 0 $twentyfive;
+			}
 		}
 	}
 }
@@ -101,6 +108,9 @@
 				@include span-columns(2);
 				&:first-of-type {
 					@include shift(3);
+					@include media( $large-screen ) {
+						@include shift(0);
+					}
 				}
 			}
 			svg {

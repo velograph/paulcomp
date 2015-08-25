@@ -46,10 +46,7 @@ body {
 	img {
 		height: auto;
 		max-width: 100%;
-	}
-	.skip-link {
-		position: absolute;
-		text-indent: -99999px;
+		width: 100%;
 	}
 	input[type="search"],
 	input[type="email"] {
@@ -73,6 +70,7 @@ body {
 		width: 100%;
 	}
 	.skip-link {
+		clip: rect(1px, 1px, 1px, 1px);
 		position: absolute;
 		text-indent: -9999px;
 	}
@@ -97,6 +95,7 @@ body {
 .shop-portals {
 	.tab-trigger {
 		position: relative;
+		text-align: center;
 		@include span-columns(4, table);
 		@include omega;
 		img {
@@ -110,21 +109,38 @@ body {
 			@include transition(opacity 0.2s ease-in-out);
 			width: 100%;
 			.thumb-title {
-				bottom: $fifty;
 				color: $black;
 				position: absolute;
+				display: none;
 				left: 50%;
 				@include transform( translate(-50%,-50%) );
 				@include media( $large-screen ) {
+					display: block;
 					position: absolute;
 					top: 50%;
 				}
 			}
 		}
-		:hover {
-			.overlay {
-				opacity: 1;
+		@include media( $large-screen ) {
+			:hover {
+				.overlay {
+					opacity: 1;
+				}
 			}
+		}
+	}
+	.ui-state-default {
+		background: $black;
+		opacity: .5;
+	}
+	.ui-state-active {
+		opacity: 1;
+	}
+	.mobile-tab-title {
+		margin-top: $twentyfive;
+		text-align: center;
+		@include media( $large-screen ) {
+			display: none;
 		}
 	}
 	.portal-container {
