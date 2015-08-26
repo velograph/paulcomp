@@ -157,7 +157,7 @@ add_image_size( 'portal-tablet', '768', '576', 'true' );
 add_image_size( 'portal-desktop', '1280', '960', 'true' );
 add_image_size( 'portal-retina', '2400', '1800', 'true' );
 
-add_image_size( 'page-banner-mobile', '480', '300', 'true' );
+add_image_size( 'page-banner-mobile', '480', '400', 'true' );
 add_image_size( 'page-banner-tablet', '768', '356', 'true' );
 add_image_size( 'page-banner-desktop', '1280', '430', 'true' );
 add_image_size( 'page-banner-retina', '2400', '800', 'true' );

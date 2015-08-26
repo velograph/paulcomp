@@ -92,6 +92,37 @@ body {
 	}
 }
 
+.leading-shop-image {
+	@include row();
+	position: relative;
+	img {
+		float: left;
+	}
+	.overlay {
+		display: none;
+		height: 100%;
+		width: 100%;
+		@include media( $large-screen ) {
+			@include row();
+		}
+		.thumb-title {
+			color: $white;
+			left: 50%;
+			position: absolute;
+			top: 50%;
+			@include transition(all 0.2s ease-in-out);
+			@include transform( translate(-50%,-50%) );
+		}
+	}
+	:hover {
+		.overlay {
+			.thumb-title {
+				color: $gray;
+			}
+		}
+	}
+}
+
 .shop-portals {
 	.ui-tabs-nav {
 		@include media( $large-screen ) {
