@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package Paul Components
+ * @package Paul Component Engineering
  */
 
 if ( ! function_exists( 'basis_paging_nav' ) ) :
@@ -18,15 +18,15 @@ function basis_paging_nav() {
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'Paul Components' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'Paul Component Engineering' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'Paul Components' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'Paul Component Engineering' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'Paul Components' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'Paul Component Engineering' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -49,11 +49,11 @@ function basis_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'Paul Components' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'Paul Component Engineering' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'Paul Components' ) );
-				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'Paul Components' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'Paul Component Engineering' ) );
+				next_post_link(     '<div class="nav-next">%link</div>',     _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link',     'Paul Component Engineering' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -79,12 +79,12 @@ function basis_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'Paul Components' ),
+		_x( 'Posted on %s', 'post date', 'Paul Component Engineering' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		_x( 'by %s', 'post author', 'Paul Components' ),
+		_x( 'by %s', 'post author', 'Paul Component Engineering' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -101,25 +101,25 @@ function basis_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'Paul Components' ) );
+		$categories_list = get_the_category_list( __( ', ', 'Paul Component Engineering' ) );
 		if ( $categories_list && basis_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'Paul Components' ) . '</span>', $categories_list );
+			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'Paul Component Engineering' ) . '</span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'Paul Components' ) );
+		$tags_list = get_the_tag_list( '', __( ', ', 'Paul Component Engineering' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'Paul Components' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'Paul Component Engineering' ) . '</span>', $tags_list );
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', 'Paul Components' ), __( '1 Comment', 'Paul Components' ), __( '% Comments', 'Paul Components' ) );
+		comments_popup_link( __( 'Leave a comment', 'Paul Component Engineering' ), __( '1 Comment', 'Paul Component Engineering' ), __( '% Comments', 'Paul Component Engineering' ) );
 		echo '</span>';
 	}
 
-	edit_post_link( __( 'Edit', 'Paul Components' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( __( 'Edit', 'Paul Component Engineering' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
@@ -136,45 +136,45 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  */
 function the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
-		$title = sprintf( __( 'Category: %s', 'Paul Components' ), single_cat_title( '', false ) );
+		$title = sprintf( __( 'Category: %s', 'Paul Component Engineering' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
-		$title = sprintf( __( 'Tag: %s', 'Paul Components' ), single_tag_title( '', false ) );
+		$title = sprintf( __( 'Tag: %s', 'Paul Component Engineering' ), single_tag_title( '', false ) );
 	} elseif ( is_author() ) {
-		$title = sprintf( __( 'Author: %s', 'Paul Components' ), '<span class="vcard">' . get_the_author() . '</span>' );
+		$title = sprintf( __( 'Author: %s', 'Paul Component Engineering' ), '<span class="vcard">' . get_the_author() . '</span>' );
 	} elseif ( is_year() ) {
-		$title = sprintf( __( 'Year: %s', 'Paul Components' ), get_the_date( _x( 'Y', 'yearly archives date format', 'Paul Components' ) ) );
+		$title = sprintf( __( 'Year: %s', 'Paul Component Engineering' ), get_the_date( _x( 'Y', 'yearly archives date format', 'Paul Component Engineering' ) ) );
 	} elseif ( is_month() ) {
-		$title = sprintf( __( 'Month: %s', 'Paul Components' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'Paul Components' ) ) );
+		$title = sprintf( __( 'Month: %s', 'Paul Component Engineering' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'Paul Component Engineering' ) ) );
 	} elseif ( is_day() ) {
-		$title = sprintf( __( 'Day: %s', 'Paul Components' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'Paul Components' ) ) );
+		$title = sprintf( __( 'Day: %s', 'Paul Component Engineering' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'Paul Component Engineering' ) ) );
 	} elseif ( is_tax( 'post_format' ) ) {
 		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-			$title = _x( 'Asides', 'post format archive title', 'Paul Components' );
+			$title = _x( 'Asides', 'post format archive title', 'Paul Component Engineering' );
 		} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-			$title = _x( 'Galleries', 'post format archive title', 'Paul Components' );
+			$title = _x( 'Galleries', 'post format archive title', 'Paul Component Engineering' );
 		} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-			$title = _x( 'Images', 'post format archive title', 'Paul Components' );
+			$title = _x( 'Images', 'post format archive title', 'Paul Component Engineering' );
 		} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-			$title = _x( 'Videos', 'post format archive title', 'Paul Components' );
+			$title = _x( 'Videos', 'post format archive title', 'Paul Component Engineering' );
 		} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-			$title = _x( 'Quotes', 'post format archive title', 'Paul Components' );
+			$title = _x( 'Quotes', 'post format archive title', 'Paul Component Engineering' );
 		} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-			$title = _x( 'Links', 'post format archive title', 'Paul Components' );
+			$title = _x( 'Links', 'post format archive title', 'Paul Component Engineering' );
 		} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-			$title = _x( 'Statuses', 'post format archive title', 'Paul Components' );
+			$title = _x( 'Statuses', 'post format archive title', 'Paul Component Engineering' );
 		} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-			$title = _x( 'Audio', 'post format archive title', 'Paul Components' );
+			$title = _x( 'Audio', 'post format archive title', 'Paul Component Engineering' );
 		} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-			$title = _x( 'Chats', 'post format archive title', 'Paul Components' );
+			$title = _x( 'Chats', 'post format archive title', 'Paul Component Engineering' );
 		}
 	} elseif ( is_post_type_archive() ) {
-		$title = sprintf( __( 'Archives: %s', 'Paul Components' ), post_type_archive_title( '', false ) );
+		$title = sprintf( __( 'Archives: %s', 'Paul Component Engineering' ), post_type_archive_title( '', false ) );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
-		$title = sprintf( __( '%1$s: %2$s', 'Paul Components' ), $tax->labels->singular_name, single_term_title( '', false ) );
+		$title = sprintf( __( '%1$s: %2$s', 'Paul Component Engineering' ), $tax->labels->singular_name, single_term_title( '', false ) );
 	} else {
-		$title = __( 'Archives', 'Paul Components' );
+		$title = __( 'Archives', 'Paul Component Engineering' );
 	}
 
 	/**

@@ -146,7 +146,9 @@ get_header(); ?>
 								<h2 class="thumb-title">
 									Components
 								</h2>
+								<span class="arrow-up">&nbsp;</span>
 							</div>
+							<span class="mobile-arrow-up">&nbsp;</span>
 
 						</a>
 					</li>
@@ -168,7 +170,9 @@ get_header(); ?>
 								<h2 class="thumb-title">
 									Service Parts
 								</h2>
+								<span class="arrow-up">&nbsp;</span>
 							</div>
+							<span class="mobile-arrow-up">&nbsp;</span>
 
 						</a>
 					</li>
@@ -190,13 +194,17 @@ get_header(); ?>
 								<h2 class="thumb-title">
 									Apparel &amp; Accessories
 								</h2>
+								<span class="arrow-up">&nbsp;</span>
 							</div>
+							<span class="mobile-arrow-up">&nbsp;</span>
 
 						</a>
 					</li>
 				</ul>
 				<div id="components-tab">
-					<h2 class="mobile-tab-title">Components</h2>
+					<h2 class="mobile-tab-title">
+						Components
+					</h2>
 					<div class="portal-container page-content">
 
 						<?php // Components ?>
@@ -204,7 +212,7 @@ get_header(); ?>
 						    $prod_categories = get_terms( 'product_cat', array(
 						        'orderby' => 'name',
 						        'order' => 'ASC',
-								'child_of' => 7,
+								'parent' => 7,
 						        'hide_empty' => 1
 						    ));
 						    foreach( $prod_categories as $prod_cat ) :
@@ -217,9 +225,9 @@ get_header(); ?>
 
 								<a href="<?php echo $term_link; ?>">
 									<img src="<?php echo $cat_thumb_url; ?>" />
-									<h6>
+									<h4>
 										<?php echo $prod_cat->name; ?>
-									</h6>
+									</h4>
 								</a>
 
 							</div>
@@ -281,7 +289,7 @@ get_header(); ?>
 								$term_link = get_term_link( $prod_cat, 'product_cat' );
 							?>
 
-							<div class="portal">
+							<div class="accessories-apparel-portal portal">
 
 								<a href="<?php echo $term_link; ?>">
 									<img src="<?php echo $cat_thumb_url; ?>" />
@@ -360,8 +368,9 @@ get_header(); ?>
 				</picture>
 			</div>
 
-			<div class="story-content">
+			<div class="lead-in-copy story-content">
 				<?php the_field('story_content'); ?>
+				<p><a href="/story">Keep Reading ></a></p>
 			</div>
 		</div>
 

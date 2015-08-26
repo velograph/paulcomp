@@ -113,6 +113,10 @@ h6 {
             }
         }
     }
+    a {
+        color: $orange;
+        font-style: italic;
+    }
 }
 
 p {
@@ -161,9 +165,12 @@ picture {
 }
 
 blockquote {
-  font-size: $h3-font-size;
+  font-size: $h3-font-size / 1.5;
   font-style: italic;
   font-weight: 400;
+  @include media( $large-screen ) {
+      font-size: $h3-font-size;
+  }
 }
 
 cite {

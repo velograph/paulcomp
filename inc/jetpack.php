@@ -3,7 +3,7 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package Paul Components
+ * @package Paul Component Engineering
  */
 
 /**

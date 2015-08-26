@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package Paul Components
+ * @package Paul Component Engineering
  */
 
 get_header(); ?>

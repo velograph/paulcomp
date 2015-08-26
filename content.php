@@ -1,6 +1,6 @@
 <?php
 /**
- * @package Paul Components
+ * @package Paul Component Engineering
  */
 ?>
 
@@ -19,14 +19,14 @@
 		<?php
 			/* translators: %s: Name of current post */
 			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'Paul Components' ),
+				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'Paul Component Engineering' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
 		?>
 
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'Paul Components' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'Paul Component Engineering' ),
 				'after'  => '</div>',
 			) );
 		?>

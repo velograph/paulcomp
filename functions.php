@@ -1,8 +1,8 @@
 <?php
 /**
- * Paul Components functions and definitions
+ * Paul Component Engineering functions and definitions
  *
- * @package Paul Components
+ * @package Paul Component Engineering
  */
 
 /**
@@ -25,8 +25,8 @@ function paulcomp_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on Paul Components, use a find and replace
-	 * to change 'Paul Components' to the name of your theme in all the template files
+	 * If you're building a theme based on Paul Component Engineering, use a find and replace
+	 * to change 'Paul Component Engineering' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'paulcomponents', get_template_directory() . '/languages' );
 
@@ -140,7 +140,7 @@ function my_login_logo_url() {
 add_filter( 'login_headerurl', 'my_login_logo_url' );
 
 function my_login_logo_url_title() {
-    return 'Wildeor';
+    return 'Paul Component Engineering';
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
 

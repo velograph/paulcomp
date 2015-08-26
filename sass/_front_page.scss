@@ -102,15 +102,13 @@
 		}
 		.story-image {
 			@include media( $large-screen ) {
-				@include span-columns(4);
+				@include span-columns(5);
+				@include shift(1);
 			}
 		}
 		.story-content {
 			@include media( $large-screen ) {
-				@include span-columns(8);
-				p {
-					@include columns(2 8em);
-				}
+				@include span-columns(5);
 			}
 		}
 	}

@@ -20,14 +20,6 @@
 				margin: 0 auto;
 				width: 50%;
 			}
-			h1 {
-				font-size: $h3-font-size / 1.5;
-				margin-bottom: $fifteen;
-				@include media( $large-screen ) {
-					font-size: $h1-font-size;
-					margin-bottom: $twentyfive;
-				}
-			}
 			label[for="epm-email"],
 			input[type="submit"] {
 				display: none;
@@ -35,15 +27,25 @@
 			input[type="email"] {
 				margin: 0 auto $twentyfive;
 				padding: $five $five $five 35px;
-				width: 50%;
+				@include media( $large-screen ) {
+					width: 50%;
+				}
 				background: {
 					image: url('../images/envelope.svg');
 				}
 			}
-			blockquote {
-				color: $white;
-				padding: 0 $twentyfive;
+		}
+		h1 {
+			font-size: $h3-font-size / 1.5;
+			margin: $fifteen 0;
+			@include media( $large-screen ) {
+				font-size: $h1-font-size;
+				margin-bottom: $twentyfive;
 			}
+		}
+		blockquote {
+			color: $white;
+			padding: 0 $twentyfive;
 		}
 	}
 }

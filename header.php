@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package Paul Components
+ * @package Paul Component Engineering
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -20,7 +20,7 @@
 
 <body <?php body_class(); ?>>
 
-<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'Paul Components' ); ?></a>
+<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'Paul Component Engineering' ); ?></a>
 
 <div id="page" class="hfeed site">
 

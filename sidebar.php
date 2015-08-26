@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package Paul Components
+ * @package Paul Component Engineering
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
