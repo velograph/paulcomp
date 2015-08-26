@@ -7,7 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package Wildeor
+ * @package Paul Component Engineering
  */
 
 get_header(); ?>
