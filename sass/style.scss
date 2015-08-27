@@ -22,6 +22,7 @@
 @import "header";
 @import "footer";
 @import "front_page";
+@import "products";
 
 body {
 	color: $dark-gray;
@@ -272,6 +273,23 @@ body {
 	text-align: center;
 	h1 {
 		color: $orange;
+	}
+}
+
+.breadcrumbs-container {
+	@include row();
+	background: $light-gray;
+	.breadcrumbs {
+		@include outer-container;
+		color: $orange;
+		font-weight: 900;
+		a,
+		.end-crumb {
+			color: $gray;
+			font-size: $h4-font-size;
+			font-weight: 900;
+			text-transform: uppercase;
+		}
 	}
 }
 
