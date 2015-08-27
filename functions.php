@@ -129,7 +129,7 @@ add_filter('upload_mimes', 'cc_mime_types');
 // Paul Logo on login
 function custom_login_logo() {
 	echo '<style type="text/css">
-	h1 a { background-image: url('.get_bloginfo('template_directory').'/images/paul_blag_flag_logo.svg) !important; }
+	h1 a { background-image: url('.get_bloginfo('template_directory').'/images/paul_black_flag_logo.svg) !important; }
 	</style>';
 }
 add_action('login_head', 'custom_login_logo');
