@@ -251,7 +251,6 @@ get_header( 'shop' ); ?>
 
    	 		<?php endforeach; wp_reset_query(); ?>
 
-<<<<<<< HEAD
 			<?php
 			$current_term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 			$terms = get_terms( 'product_cat', array(
@@ -313,7 +312,6 @@ get_header( 'shop' ); ?>
 			    </div>
 
 			    <?php wp_reset_postdata(); } ?>
-=======
    	 	</div>
 
    	 <?php elseif( is_tax('product_cat', 'accessories-apparel') ) : ?>
@@ -348,7 +346,6 @@ get_header( 'shop' ); ?>
    	 		<?php endforeach; wp_reset_query(); ?>
 
    	 	</div>
->>>>>>> Feature/shop
 
 	<?php endif; ?>
 
