@@ -267,3 +267,21 @@ body {
 		}
 	}
 }
+
+.lead-in-title {
+	text-align: center;
+	h1 {
+		color: $orange;
+	}
+}
+
+.page-content {
+	.contact-column {
+		@include media( $large-screen ) {
+			@include span-columns(5);
+		}
+		&:first-of-type {
+			@include shift(1);
+		}
+	}
+}

@@ -53,12 +53,6 @@
 				color: $dark-gray;
 			}
 		}
-		.lead-in-title {
-			text-align: center;
-			h1 {
-				color: $orange;
-			}
-		}
 	}
 	.story-lead-in {
 		@include outer-container;
@@ -79,6 +73,9 @@
 		.story-content {
 			@include media( $large-screen ) {
 				@include span-columns(5);
+			}
+			a {
+				font-style: italic;
 			}
 		}
 	}
