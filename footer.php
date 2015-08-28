@@ -16,10 +16,8 @@
 
 		<div class="mailing-list-image">
 
-			<?php $mobile_page_banner = wp_get_attachment_image_src(get_field('mailing_list_background_image', 75), 'page-banner-mobile'); ?>
-			<?php $tablet_page_banner = wp_get_attachment_image_src(get_field('mailing_list_background_image', 75), 'page-banner-tablet'); ?>
-			<?php $desktop_page_banner = wp_get_attachment_image_src(get_field('mailing_list_background_image', 75), 'page-banner-desktop'); ?>
-			<?php $retina_page_banner = wp_get_attachment_image_src(get_field('mailing_list_background_image', 75), 'page-banner-retina'); ?>
+			<?php $mobile_page_banner = wp_get_attachment_image_src(get_field('mailing_list_background_image', 75), 'mailing-banner-mobile'); ?>
+			<?php $desktop_page_banner = wp_get_attachment_image_src(get_field('mailing_list_background_image', 75), 'mailing-banner-desktop'); ?>
 
 			<picture>
 				<!--[if IE 9]><video style="display: none"><![endif]-->
@@ -27,14 +25,8 @@
 					srcset="<?php echo $mobile_page_banner[0]; ?>"
 					media="(max-width: 500px)" />
 				<source
-					srcset="<?php echo $tablet_page_banner[0]; ?>"
-					media="(max-width: 860px)" />
-				<source
 					srcset="<?php echo $desktop_page_banner[0]; ?>"
-					media="(max-width: 1180px)" />
-				<source
-					srcset="<?php echo $retina_page_banner[0]; ?>"
-					media="(min-width: 1181px)" />
+					media="(min-width: 501px)" />
 				<!--[if IE 9]></video><![endif]-->
 				<img srcset="<?php echo $desktop_page_banner[0]; ?>">
 			</picture>

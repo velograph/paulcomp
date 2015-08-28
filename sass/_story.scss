@@ -1,0 +1,28 @@
+.story-sections {
+	.banner-image {
+		img {
+			float: left;
+		}
+	}
+	.caption {
+		background: $orange-overlay;
+		bottom: $twentyfive;
+		color: $background;
+		padding: $ten $fifteen;
+		position: absolute;
+		right: 0;
+	}
+	.full-banner-image {
+		@include row();
+		position: relative;
+		.banner-image {
+		}
+	}
+	.two-image-banner {
+		.banner-image {
+			position: relative;
+			@include omega;
+			@include span-columns(6, table);
+		}
+	}
+}

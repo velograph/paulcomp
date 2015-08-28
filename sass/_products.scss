@@ -1,19 +1,24 @@
-.single-product {
+.product-container {
 	@include row();
-	// @include outer-container;
+	padding: $fifty $twentyfive;
 	.product-section {
 		@include outer-container;
+		margin-bottom: $fifty;
 	}
 	.product-gallery-container,
 	.tech-specs {
-		@include span-columns(5);
-		@include shift(1);
+		@include media( $large-screen ) {
+			@include span-columns(5);
+			@include shift(1);
+		}
 	}
 	.product-add-to-cart,
 	.supporting-video {
-		@include span-columns(5);
+		@include media( $large-screen ) {
+			@include span-columns(4);
+			@include shift(1);
+		}
 		position: relative;
-		padding-bottom: 27.25%;
 		height: 0;
 		overflow: hidden;
 		max-width: 100%;
@@ -28,19 +33,90 @@
 			height: 100%;
 		}
 	}
+	.product-top {
+		.product-add-to-cart {
+			h4 {
+				margin-bottom: $twentyfive;
+			}
+			table,
+			td {
+				border: 0;
+				margin: 0;
+				padding: 0;
+			}
+			td.label {
+				vertical-align: top;
+			}
+			td.value {
+				select {
+					margin: 0;
+				}
+			}
+			.price {
+				.amount {
+					font-size: $h2-font-size;
+					line-height: $h2-font-size;
+				}
+			}
+			table.variations {
+				margin-bottom: $twentyfive;
+			}
+			.single_variation_wrap {
+				@include row();
+				margin-bottom: $fifty;
+				.single_variation {
+					@include span-columns(3);
+				}
+				.variations_button {
+					@include span-columns(9);
+					.quantity {
+						@include span-columns(3);
+						@include shift(1);
+					}
+					.single_add_to_cart_button {
+						@include span-columns(7);
+						@include shift(1);
+						@include omega;
+					}
+				}
+			}
+		}
+	}
 	.product-middle {
+		.tech-specs {
+			ul {
+				li {
+					.key {
+						@include span-columns(6);
+					}
+					.value {
+						@include span-columns(6);
+						text-align: right;
+					}
+				}
+			}
+		}
+		.supporting-video {
+			padding-bottom: 27.25%;
+		}
 		.product-story {
-			@include span-columns(5);
+			@include media( $large-screen ) {
+				@include span-columns(5);
+				@include shift(1);
+			}
 		}
 	}
 	.related-products {
 		.products {
 			@include outer-container;
 			.product {
-				@include span-columns(3);
+				@include media( $large-screen ) {
+					@include span-columns(3);
+				}
 				text-align: center;
 				.price,
-				.product_type_variable {
+				.product_type_variable,
+				.add_to_cart_button {
 					display: none;
 				}
 				h3 {
@@ -48,6 +124,11 @@
 					font-size: $h4-font-size;
 					font-weight: 900;
 					text-transform: uppercase;
+				}
+				&:hover {
+					h3 {
+						color: $orange;
+					}
 				}
 			}
 		}

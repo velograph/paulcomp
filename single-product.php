@@ -7,33 +7,33 @@
 
 get_header(); ?>
 
-<script>
-jQuery(document).ready(function(){
+	<script>
+	jQuery(document).ready(function(){
 
-	jQuery(".accordion").hide();
-	jQuery('.value').each(function() {
-	    var $dropdown = jQuery(this);
+		jQuery(".accordion").hide();
+		jQuery('.value').each(function() {
+		    var $dropdown = jQuery(this);
 
-	    jQuery(".accordion-hook", $dropdown).click(function(e) {
-	      e.preventDefault();
-	      $div = jQuery(".accordion", $dropdown);
-	      $div.toggle('slow');
-	      jQuery(".accordion").not($div).hide('slow');
-	      return false;
-	    });
+		    jQuery(".accordion-hook", $dropdown).click(function(e) {
+		      e.preventDefault();
+		      $div = jQuery(".accordion", $dropdown);
+		      $div.toggle('slow');
+		      jQuery(".accordion").not($div).hide('slow');
+		      return false;
+		    });
+
+		});
+
+		  jQuery('html').click(function(){
+		    jQuery(".accordion").hide('slow');
+		  });
 
 	});
+	</script>
 
-	  jQuery('html').click(function(){
-	    jQuery(".accordion").hide('slow');
-	  });
+	<?php get_template_part('partials/breadcrumbs'); ?>
 
-});
-</script>
-
-	<section class="single-product">
-
-		<?php get_template_part('partials/breadcrumbs'); ?>
+	<section class="product-container">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -85,7 +85,7 @@ jQuery(document).ready(function(){
 										srcset="<?php echo $image['sizes']['portal-retina']; ?>"
 										media="(min-width: 1181px)" />
 									<!--[if IE 9]></video><![endif]-->
-									<img srcset="<?php echo $portal_desktop[0]; ?>">
+									<img srcset="<?php echo $image['sizes']['portal-desktop']; ?>">
 								</picture>
 
 							<?php endforeach; ?>
@@ -114,9 +114,14 @@ jQuery(document).ready(function(){
 				<div class="product-add-to-cart">
 
 					<h4><?php the_title(); ?></h4>
-					<?php if ( $price_html = $product->get_price_html() ) : ?>
-						<span class="price"><?php echo $price_html; ?></span>
-					<?php endif; ?>
+
+					<?php if( $product->is_type( 'simple' ) ) { ?>
+
+						<?php if ( $price_html = $product->get_price_html() ) : ?>
+							<h3><span class="price"><?php echo $price_html; ?></span></h3>
+						<?php endif; ?>
+
+					<?php } ?>
 
 					<?php
 						/**
@@ -136,7 +141,9 @@ jQuery(document).ready(function(){
 						remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 						do_action( 'woocommerce_single_product_summary' );
 					?>
-					<?php the_excerpt(); ?>
+					<div class="lead-in-copy">
+						<?php the_excerpt(); ?>
+					</div>
 				</div>
 
 			</section>
@@ -157,25 +164,27 @@ jQuery(document).ready(function(){
 								<?php if( get_row_layout() == 'spec' ) : ?>
 
 									<li>
-										<div class="key"><?php the_sub_field('key'); ?></div>
+										<div class="key"><small><?php the_sub_field('key'); ?></small></div>
 
 										<div class="value">
-											<?php if(get_sub_field('answer') == "Text") : ?>
+											<small>
+												<?php if(get_sub_field('answer') == "Text") : ?>
 
-												<?php the_sub_field('value'); ?>
+													<?php the_sub_field('value'); ?>
 
-											<?php elseif(get_sub_field('answer') == "File Download") : ?>
+												<?php elseif(get_sub_field('answer') == "File Download") : ?>
 
-												<a href="<?php the_sub_field('file_download'); ?>">Download</a>
+													<a href="<?php the_sub_field('file_download'); ?>">Download</a>
 
-											<?php elseif(get_sub_field('answer') == "Inline Answer") : ?>
+												<?php elseif(get_sub_field('answer') == "Inline Answer") : ?>
 
-												<span class="accordion-hook"><?php the_sub_field('inline_title'); ?>&darr;</span>
-												<div class="accordion">
-													<?php the_sub_field('inline_answer'); ?>
-												</div>
+													<span class="accordion-hook"><?php the_sub_field('inline_title'); ?>&darr;</span>
+													<div class="accordion">
+														<?php the_sub_field('inline_answer'); ?>
+													</div>
 
-											<?php endif; ?>
+												<?php endif; ?>
+											</small>
 										</div>
 									</li>
 

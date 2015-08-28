@@ -162,6 +162,9 @@ add_image_size( 'page-banner-tablet', '768', '356', 'true' );
 add_image_size( 'page-banner-desktop', '1280', '430', 'true' );
 add_image_size( 'page-banner-retina', '2400', '800', 'true' );
 
+add_image_size( 'mailing-banner-mobile', '480', '400', 'true' );
+add_image_size( 'mailing-banner-desktop', '1280', '300', 'true' );
+
 /**
  * TypeKit Fonts
  */
