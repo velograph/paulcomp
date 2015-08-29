@@ -159,11 +159,15 @@ add_image_size( 'portal-retina', '2400', '1800', 'true' );
 
 add_image_size( 'page-banner-mobile', '480', '400', 'true' );
 add_image_size( 'page-banner-tablet', '768', '356', 'true' );
-add_image_size( 'page-banner-desktop', '1280', '430', 'true' );
+add_image_size( 'page-banner-desktop', '1280', '580', 'true' );
 add_image_size( 'page-banner-retina', '2400', '800', 'true' );
 
 add_image_size( 'mailing-banner-mobile', '480', '400', 'true' );
 add_image_size( 'mailing-banner-desktop', '1280', '300', 'true' );
+
+add_image_size( 'category-banner-mobile', '480', '300', 'true' );
+add_image_size( 'category-banner-desktop', '1280', '150', 'true' );
+add_image_size( 'category-banner-retina', '2400', '300', 'true' );
 
 /**
  * TypeKit Fonts

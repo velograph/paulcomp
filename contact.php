@@ -48,14 +48,16 @@ get_header(); ?>
 
 			<section class="page-content">
 
-				<div class="contact-column lead-in-copy">
-					<h4>Headquarters</h4>
-					<?php the_field('column_one'); ?>
-				</div>
+				<div class="row">
+					<div class="column lead-in-copy">
+						<h4>Headquarters</h4>
+						<?php the_field('column_one'); ?>
+					</div>
 
-				<div class="contact-column lead-in-copy">
-					<h4>Email</h4>
-					<?php the_field('column_two'); ?>
+					<div class="column lead-in-copy">
+						<h4>Email</h4>
+						<?php the_field('column_two'); ?>
+					</div>
 				</div>
 			</section>
 

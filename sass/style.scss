@@ -298,12 +298,26 @@ body {
 }
 
 .page-content {
-	.contact-column {
-		@include media( $large-screen ) {
-			@include span-columns(5);
+	img.alignright { float: right; margin: 0 0 1em 1em; }
+	img.alignleft { float: left; margin: 0 1em 1em 0; }
+	img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+	.two-column-row {
+		border-bottom: 1px solid $gray;
+	}
+	.row {
+		@include row();
+		.column {
+			@include media( $large-screen ) {
+				@include span-columns(5);
+			}
+			&:first-of-type {
+				@include shift(1);
+			}
 		}
-		&:first-of-type {
-			@include shift(1);
+		.column-one {
+			img {
+				max-width: 150px;
+			}
 		}
 	}
 }
