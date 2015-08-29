@@ -16,16 +16,17 @@
 			}
 		}
 		.slick-dots {
-			bottom: $ten;
+			bottom: 40px;
 			right: $ten;
 			position: absolute;
 			li {
 				display: inline-block;
 				margin-right: $five;
 				button {
+					@include transform( skew( -10deg ) );
 					background: rgba(255,255,255,.2);
-					border-radius: $fifty;
-					height: $ten;
+					border-radius: 0;
+					height: $fifteen;
 					padding: 0;
 					text-indent: -9999px;
 					width: $ten;
