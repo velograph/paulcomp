@@ -11,6 +11,9 @@
 		padding: $ten $fifteen;
 		position: absolute;
 		right: 0;
+		small {
+			font-weight: 900;
+		}
 	}
 	.full-banner-image {
 		@include row();

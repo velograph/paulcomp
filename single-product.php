@@ -63,32 +63,61 @@ get_header(); ?>
 
 					<div class="product-image">
 
-						<?php
+						<?php if( get_field('gallery') ) : ?>
 
-						$images = get_field('gallery');
+							<?php
 
-						if( $images ): ?>
-							<?php foreach( $images as $image ): ?>
+							$images = get_field('gallery');
 
-								<picture class="portal-image">
-									<!--[if IE 9]><video style="display: none"><![endif]-->
-									<source
-										srcset="<?php echo $image['sizes']['portal-mobile']; ?>"
-										media="(max-width: 500px)" />
-									<source
-										srcset="<?php echo $image['sizes']['portal-tablet']; ?>"
-										media="(max-width: 860px)" />
-									<source
-										srcset="<?php echo $image['sizes']['portal-desktop']; ?>"
-										media="(max-width: 1180px)" />
-									<source
-										srcset="<?php echo $image['sizes']['portal-retina']; ?>"
-										media="(min-width: 1181px)" />
-									<!--[if IE 9]></video><![endif]-->
-									<img srcset="<?php echo $image['sizes']['portal-desktop']; ?>">
-								</picture>
+							if( $images ): ?>
+								<?php foreach( $images as $image ): ?>
 
-							<?php endforeach; ?>
+									<picture class="portal-image">
+										<!--[if IE 9]><video style="display: none"><![endif]-->
+										<source
+											srcset="<?php echo $image['sizes']['portal-mobile']; ?>"
+											media="(max-width: 500px)" />
+										<source
+											srcset="<?php echo $image['sizes']['portal-tablet']; ?>"
+											media="(max-width: 860px)" />
+										<source
+											srcset="<?php echo $image['sizes']['portal-desktop']; ?>"
+											media="(max-width: 1180px)" />
+										<source
+											srcset="<?php echo $image['sizes']['portal-retina']; ?>"
+											media="(min-width: 1181px)" />
+										<!--[if IE 9]></video><![endif]-->
+										<img srcset="<?php echo $image['sizes']['portal-desktop']; ?>">
+									</picture>
+
+								<?php endforeach; ?>
+							<?php endif; ?>
+
+						<?php else: ?>
+
+							<?php $mobile_page_banner = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'portal-mobile'); ?>
+							<?php $tablet_page_banner = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'portal-tablet'); ?>
+							<?php $desktop_page_banner = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'portal-desktop'); ?>
+							<?php $retina_page_banner = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'portal-retina'); ?>
+
+							<picture>
+								<!--[if IE 9]><video style="display: none"><![endif]-->
+								<source
+									srcset="<?php echo $mobile_page_banner[0]; ?>"
+									media="(max-width: 500px)" />
+								<source
+									srcset="<?php echo $tablet_page_banner[0]; ?>"
+									media="(max-width: 860px)" />
+								<source
+									srcset="<?php echo $desktop_page_banner[0]; ?>"
+									media="(max-width: 1180px)" />
+								<source
+									srcset="<?php echo $retina_page_banner[0]; ?>"
+									media="(min-width: 1181px)" />
+								<!--[if IE 9]></video><![endif]-->
+								<img srcset="<?php echo $desktop_page_banner[0]; ?>">
+							</picture>
+
 						<?php endif; ?>
 
 					</div>

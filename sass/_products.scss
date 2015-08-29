@@ -60,21 +60,33 @@
 			}
 			table.variations {
 				margin-bottom: $twentyfive;
+				.label {
+					width: 33.3%;
+				}
+				.value {
+					width: 66.6%;
+				}
+				select {
+					margin-bottom: $fifteen;
+				}
 			}
 			.single_variation_wrap {
 				@include row();
 				margin-bottom: $fifty;
 				.single_variation {
-					@include span-columns(3);
+					@include span-columns(4);
 				}
 				.variations_button {
-					@include span-columns(9);
+					@include span-columns(8);
 					.quantity {
-						@include span-columns(3);
+						@include span-columns(2);
 						@include shift(1);
+						input[type="number"] {
+							padding: $ten 4px $ten 7px;
+						}
 					}
 					.single_add_to_cart_button {
-						@include span-columns(7);
+						@include span-columns(8);
 						@include shift(1);
 						@include omega;
 					}
