@@ -84,6 +84,8 @@ body {
 		}
 	}
 	.content-container {
+		position: relative;
+		top: -2px;
 		z-index: 0; // Ensures the entire container is below the header.
 	}
 }
