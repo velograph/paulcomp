@@ -4,13 +4,23 @@
 		.slick-track {
 			.slick-slide {
 				position: relative;
+				text-align: center;
 				.slide-caption {
-					bottom: $twentyfive;
-					padding-right: $twentyfive;
+					color: $background;
+					font-size: $h4-font-size;
+					left: 50%;
 					position: absolute;
+					width: 75%;
 					@include media( $large-screen ) {
-						@include span-columns(6);
-						@include shift(6);
+						font-size: $h2-font-size;
+						width: 100%;
+					}
+					@include transform( translateX(-50%) );
+					&.bottom-caption {
+						bottom: $twentyfive;
+					}
+					&.top-caption {
+						top: 50px;
 					}
 				}
 			}
