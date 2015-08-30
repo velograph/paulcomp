@@ -326,3 +326,27 @@ body {
 		}
 	}
 }
+
+.contact {
+	img {
+		float: left;
+	}
+	.banner-image {
+		@include row();
+	}
+	.lead-in-title {
+		margin-bottom: $fifty;
+	}
+	.page-content {
+		padding: $fifty $fifty 0;
+		@include media( $large-screen ) {
+			padding: 100px 0;
+		}
+		.column {
+			margin-bottom: $fifty;
+			@include media( $large-screen ) {
+				@include span-columns(6);
+			}
+		}
+	}
+}

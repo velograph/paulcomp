@@ -12,7 +12,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="contact">
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
@@ -21,44 +21,42 @@ get_header(); ?>
 			<?php $desktop_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-desktop'); ?>
 			<?php $retina_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-retina'); ?>
 
-			<picture>
-				<!--[if IE 9]><video style="display: none"><![endif]-->
-				<source
-					srcset="<?php echo $mobile_page_banner[0]; ?>"
-					media="(max-width: 500px)" />
-				<source
-					srcset="<?php echo $tablet_page_banner[0]; ?>"
-					media="(max-width: 860px)" />
-				<source
-					srcset="<?php echo $desktop_page_banner[0]; ?>"
-					media="(max-width: 1180px)" />
-				<source
-					srcset="<?php echo $retina_page_banner[0]; ?>"
-					media="(min-width: 1181px)" />
-				<!--[if IE 9]></video><![endif]-->
-				<img srcset="<?php echo $desktop_page_banner[0]; ?>">
-			</picture>
-
+			<div class="banner-image">
+				<picture>
+					<!--[if IE 9]><video style="display: none"><![endif]-->
+					<source
+						srcset="<?php echo $mobile_page_banner[0]; ?>"
+						media="(max-width: 500px)" />
+					<source
+						srcset="<?php echo $tablet_page_banner[0]; ?>"
+						media="(max-width: 860px)" />
+					<source
+						srcset="<?php echo $desktop_page_banner[0]; ?>"
+						media="(max-width: 1180px)" />
+					<source
+						srcset="<?php echo $retina_page_banner[0]; ?>"
+						media="(min-width: 1181px)" />
+					<!--[if IE 9]></video><![endif]-->
+					<img srcset="<?php echo $desktop_page_banner[0]; ?>">
+				</picture>
+			</div>
 
 			<section class="page-content">
+
 				<div class="lead-in-title">
 					<h1><?php the_title(); ?></h1>
 				</div>
-			</section>
 
-			<section class="page-content">
-
-				<div class="row">
-					<div class="column lead-in-copy">
-						<h4>Headquarters</h4>
-						<?php the_field('column_one'); ?>
-					</div>
-
-					<div class="column lead-in-copy">
-						<h4>Email</h4>
-						<?php the_field('column_two'); ?>
-					</div>
+				<div class="column lead-in-copy">
+					<h4>Headquarters</h4>
+					<?php the_field('column_one'); ?>
 				</div>
+
+				<div class="column lead-in-copy">
+					<h4>Email</h4>
+					<?php the_field('column_two'); ?>
+				</div>
+
 			</section>
 
 		<?php endwhile; // end of the loop. ?>
