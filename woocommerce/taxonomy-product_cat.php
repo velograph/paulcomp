@@ -15,9 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-<section class="page-content">
-	<?php do_action( 'woocommerce_before_main_content' ); ?>
-</section>
+<?php get_template_part('partials/breadcrumbs'); ?>
 
 <div class="shop-portals">
 
