@@ -95,6 +95,8 @@ function paulcomp_scripts() {
 
 	wp_enqueue_script( 'paulcomp-sticky', get_template_directory_uri() . '/js/jquery.sticky.js', array(), '20130115', true );
 
+	wp_enqueue_script( 'paulcomp-pictureFill', get_template_directory_uri() . '/js/pictureFill.js', array(), '20130115', true );
+
 	wp_enqueue_script( 'paulcomp-slick', get_template_directory_uri() . '/js/slick.min.js', array(), '20130115', true );
 
 	wp_enqueue_script( 'paulcomp-matchHeight', get_template_directory_uri() . '/js/matchHeight.min.js', array(), '20130115', true );
@@ -167,8 +169,8 @@ add_image_size( 'story-banner-tablet', '768', '556', 'true' );
 add_image_size( 'story-banner-desktop', '1280', '780', 'true' );
 add_image_size( 'story-banner-retina', '2400', '900', 'true' );
 
-add_image_size( 'mailing-banner-mobile', '768', '500', 'true' );
-add_image_size( 'mailing-banner-desktop', '1280', '400', 'true' );
+add_image_size( 'mailing-banner-mobile', '768', '460', 'true' );
+add_image_size( 'mailing-banner-desktop', '1280', '380', 'true' );
 
 add_image_size( 'category-banner-mobile', '480', '300', 'true' );
 add_image_size( 'category-banner-desktop', '1280', '150', 'true' );

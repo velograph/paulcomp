@@ -81,7 +81,7 @@ get_header( 'shop' ); ?>
 											srcset="<?php echo $retina_page_banner[0]; ?>"
 											media="(min-width: 1181px)" />
 										<!--[if IE 9]></video><![endif]-->
-										<img srcset="<?php echo $desktop_page_banner[0]; ?>">
+										<img srcset="<?php echo $image[0]; ?>">
 									</picture>
 									<h4>
 										<?php the_title(); ?>
@@ -131,7 +131,7 @@ get_header( 'shop' ); ?>
 									srcset="<?php echo $retina_page_banner[0]; ?>"
 									media="(min-width: 1181px)" />
 								<!--[if IE 9]></video><![endif]-->
-								<img srcset="<?php echo $desktop_page_banner[0]; ?>">
+								<img srcset="<?php echo $image[0]; ?>">
 							</picture>
 							<h4>
 								<?php the_title(); ?>

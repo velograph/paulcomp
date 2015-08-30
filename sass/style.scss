@@ -257,6 +257,10 @@ body {
 			}
 			h4 {
 				color: $dark-gray;
+				@include media( $mobile) {
+					margin: 0 auto;
+					width: 50%;
+				}
 			}
 			&:hover {
 				a {

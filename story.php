@@ -60,7 +60,7 @@ get_header(); ?>
 											srcset="<?php echo $retina_page_banner[0]; ?>"
 											media="(min-width: 1181px)" />
 										<!--[if IE 9]></video><![endif]-->
-										<img srcset="<?php echo $desktop_page_banner[0]; ?>">
+										<img srcset="<?php echo $image[0]; ?>">
 									</picture>
 
 									<?php if( get_sub_field('caption_toggle') ) : ?>
@@ -100,7 +100,7 @@ get_header(); ?>
 											srcset="<?php echo $retina_page_banner[0]; ?>"
 											media="(min-width: 1181px)" />
 										<!--[if IE 9]></video><![endif]-->
-										<img srcset="<?php echo $desktop_page_banner[0]; ?>">
+										<img srcset="<?php echo $image[0]; ?>">
 									</picture>
 
 									<div class="caption">
@@ -131,7 +131,7 @@ get_header(); ?>
 											srcset="<?php echo $retina_page_banner[0]; ?>"
 											media="(min-width: 1181px)" />
 										<!--[if IE 9]></video><![endif]-->
-										<img srcset="<?php echo $desktop_page_banner[0]; ?>">
+										<img srcset="<?php echo $image[0]; ?>">
 									</picture>
 
 									<div class="caption">
@@ -191,7 +191,7 @@ get_header(); ?>
 												srcset="<?php echo $retina_page_banner[0]; ?>"
 												media="(min-width: 1181px)" />
 											<!--[if IE 9]></video><![endif]-->
-											<img srcset="<?php echo $desktop_page_banner[0]; ?>">
+											<img srcset="<?php echo $image[0]; ?>">
 										</picture>
 
 									</div>
@@ -218,7 +218,7 @@ get_header(); ?>
 												srcset="<?php echo $retina_page_banner[0]; ?>"
 												media="(min-width: 1181px)" />
 											<!--[if IE 9]></video><![endif]-->
-											<img srcset="<?php echo $desktop_page_banner[0]; ?>">
+											<img srcset="<?php echo $image[0]; ?>">
 										</picture>
 
 									</div>
@@ -257,7 +257,7 @@ get_header(); ?>
 												srcset="<?php echo $retina_page_banner[0]; ?>"
 												media="(min-width: 1181px)" />
 											<!--[if IE 9]></video><![endif]-->
-											<img srcset="<?php echo $desktop_page_banner[0]; ?>">
+											<img srcset="<?php echo $image[0]; ?>">
 										</picture>
 
 									</div>
@@ -333,7 +333,7 @@ get_header(); ?>
 												srcset="<?php echo $retina_page_banner[0]; ?>"
 												media="(min-width: 1181px)" />
 											<!--[if IE 9]></video><![endif]-->
-											<img srcset="<?php echo $desktop_page_banner[0]; ?>">
+											<img srcset="<?php echo $image[0]; ?>">
 										</picture>
 									</div>
 

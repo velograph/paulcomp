@@ -60,7 +60,7 @@ get_header(); ?>
 						srcset="<?php echo $image['sizes']['page-banner-retina']; ?>"
 						media="(min-width: 1181px)" />
 					<!--[if IE 9]></video><![endif]-->
-					<img srcset="<?php echo $image['sizes']['page-banner-desktop']; ?>">
+					<img srcset="">
 				</picture>
 
 			<?php endforeach; ?>
@@ -111,7 +111,7 @@ get_header(); ?>
 						srcset="<?php echo $retina_page_banner[0]; ?>"
 						media="(min-width: 1181px)" />
 					<!--[if IE 9]></video><![endif]-->
-					<img srcset="<?php echo $desktop_page_banner[0]; ?>">
+					<img srcset="<?php echo $image[0]; ?>">
 				</picture>
 
 				<div class="overlay">
@@ -336,7 +336,7 @@ get_header(); ?>
 				srcset="<?php echo $retina_page_banner[0]; ?>"
 				media="(min-width: 1181px)" />
 			<!--[if IE 9]></video><![endif]-->
-			<img srcset="<?php echo $desktop_page_banner[0]; ?>">
+			<img srcset="<?php echo $image[0]; ?>">
 		</picture>
 
 		<div class="story-lead-in page-content">
@@ -364,7 +364,7 @@ get_header(); ?>
 						srcset="<?php echo $retina_page_banner[0]; ?>"
 						media="(min-width: 1181px)" />
 					<!--[if IE 9]></video><![endif]-->
-					<img srcset="<?php echo $desktop_page_banner[0]; ?>">
+					<img srcset="<?php echo $image[0]; ?>">
 				</picture>
 			</div>
 
