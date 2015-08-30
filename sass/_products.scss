@@ -14,15 +14,15 @@
 	}
 	.product-add-to-cart,
 	.supporting-video {
-		@include media( $large-screen ) {
-			@include span-columns(4);
-			@include shift(1);
-		}
 		position: relative;
 		height: 0;
 		overflow: hidden;
 		max-width: 100%;
 		height: auto;
+		@include media( $large-screen ) {
+			@include span-columns(4);
+			@include shift(1);
+		}
 		iframe,
 		object,
 		embed {

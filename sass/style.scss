@@ -85,7 +85,6 @@ body {
 	}
 	.content-container {
 		position: relative;
-		top: -2px;
 		z-index: 0; // Ensures the entire container is below the header.
 	}
 }
@@ -94,7 +93,7 @@ body {
 	@include outer-container;
 	padding: $fifty;
 	@include media( $large-screen ) {
-		padding: $fifty 0;
+		padding: 100px 0;
 	}
 }
 

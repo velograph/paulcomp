@@ -162,7 +162,12 @@ add_image_size( 'page-banner-tablet', '768', '356', 'true' );
 add_image_size( 'page-banner-desktop', '1280', '580', 'true' );
 add_image_size( 'page-banner-retina', '2400', '800', 'true' );
 
-add_image_size( 'mailing-banner-mobile', '768', '400', 'true' );
+add_image_size( 'story-banner-mobile', '480', '480', 'true' );
+add_image_size( 'story-banner-tablet', '768', '556', 'true' );
+add_image_size( 'story-banner-desktop', '1280', '780', 'true' );
+add_image_size( 'story-banner-retina', '2400', '900', 'true' );
+
+add_image_size( 'mailing-banner-mobile', '768', '500', 'true' );
 add_image_size( 'mailing-banner-desktop', '1280', '400', 'true' );
 
 add_image_size( 'category-banner-mobile', '480', '300', 'true' );
