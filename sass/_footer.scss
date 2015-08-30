@@ -45,7 +45,11 @@
 		}
 		blockquote {
 			color: $white;
+			margin: 0 auto;
 			padding: 0 $twentyfive;
+			@include media( $large-screen ) {
+				width: 45%;
+			}
 		}
 	}
 }

@@ -92,7 +92,7 @@ body {
 
 .page-content {
 	@include outer-container;
-	padding: $fifty $twentyfive;
+	padding: $fifty;
 	@include media( $large-screen ) {
 		padding: $fifty 0;
 	}
@@ -242,6 +242,7 @@ body {
 	.portal-container {
 		@include outer-container;
 		.portal {
+			@include span-columns(6);
 			margin-bottom: $fifty;
 			position: relative;
 			text-align: center;
@@ -264,6 +265,9 @@ body {
 						color: $orange;
 					}
 				}
+			}
+			&:nth-child(even) {
+				@include omega;
 			}
 		}
 		@include media( $large-screen ) {

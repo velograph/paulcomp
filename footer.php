@@ -23,7 +23,7 @@
 				<!--[if IE 9]><video style="display: none"><![endif]-->
 				<source
 					srcset="<?php echo $mobile_page_banner[0]; ?>"
-					media="(max-width: 500px)" />
+					media="(max-width: 768px)" />
 				<source
 					srcset="<?php echo $desktop_page_banner[0]; ?>"
 					media="(min-width: 501px)" />

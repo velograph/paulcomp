@@ -205,7 +205,7 @@ get_header(); ?>
 					<h2 class="mobile-tab-title">
 						Components
 					</h2>
-					<div class="portal-container page-content">
+					<div class="portal-container">
 
 						<?php // Components ?>
 						<?php
@@ -239,7 +239,7 @@ get_header(); ?>
 
 				<div id="spare-parts-tab">
 					<h2 class="mobile-tab-title">Service Parts</h2>
-					<div class="portal-container page-content">
+					<div class="portal-container">
 
 						<?php // Service Parts ?>
 						<?php
@@ -273,7 +273,7 @@ get_header(); ?>
 
 				<div id="apparel-accessories-tab">
 					<h2 class="mobile-tab-title">Apparel &amp; Accessories</h2>
-					<div class="portal-container page-content">
+					<div class="portal-container">
 
 						<?php // apparel-accessories ?>
 						<?php
