@@ -33,6 +33,8 @@ get_header(); ?>
 
 	<?php get_template_part('partials/breadcrumbs'); ?>
 
+	<?php do_action( 'woocommerce_before_single_product' ); ?>
+
 	<section class="product-container">
 
 		<?php while ( have_posts() ) : the_post(); ?>

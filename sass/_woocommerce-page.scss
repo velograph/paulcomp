@@ -1,0 +1,64 @@
+.shop_table {
+	.row {
+		@include row();
+		border-bottom: 1px solid $light-gray;
+		padding: $fifteen 0;
+		.section-title {
+			font-weight: 900;
+		}
+		a {
+			color: $orange;
+			font-weight: 400;
+			&:hover {
+				color: $orange-hover;
+			}
+		}
+		.product-remove {
+			@include span-columns(1);
+		}
+		.product-thumbnail {
+			@include span-columns(2);
+		}
+		.product-name {
+			@include span-columns(3);
+		}
+		.product-price {
+			@include span-columns(2);
+		}
+		.product-quantity {
+			@include span-columns(2);
+		}
+		.product-subtotal {
+			@include span-columns(2);
+		}
+	}
+}
+
+.bottom-of-cart {
+	@include row();
+	padding-top: $fifty;
+	.coupons {
+		@include span-columns(6);
+		.coupon {
+			margin-bottom: $twentyfive;
+			width: 50%;
+			input[type="submit"] {
+				background: $light-gray;
+				&:hover {
+					background: $orange;
+				}
+			}
+		}
+		.update-cart {
+			input[type="submit"] {
+				background: $light-gray;
+				&:hover {
+					background: $orange;
+				}
+			}
+		}
+	}
+	.cart-collaterals {
+		@include span-columns(6);
+	}
+}

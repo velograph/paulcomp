@@ -24,6 +24,7 @@
 @import "front_page";
 @import "products";
 @import "story";
+@import "woocommerce-page";
 
 
 body {
@@ -73,11 +74,13 @@ body {
 		position: absolute;
 		text-indent: -9999px;
 	}
-	.button {
+	.button,
+	.wc-proceed-to-checkout a {
 		background: $orange;
 		border-radius: 0;
 		color: $background;
 		font-weight: 900;
+		padding: $ten $fifteen;
 		text-transform: uppercase;
 		&:hover {
 			background: $orange-hover;
@@ -351,6 +354,29 @@ body {
 			@include media( $large-screen ) {
 				@include span-columns(6);
 			}
+		}
+	}
+}
+
+.woocommerce-message {
+	background: $green;
+	color: $white;
+	.inner-container {
+		@include outer-container;
+		font-size: $h4-font-size;
+		font-weight: 400;
+		text-align: center;
+		.button {
+			background: transparent;
+			color: $white;
+		}
+	}
+}
+
+.cart_item {
+	.quantity {
+		input[type="number"] {
+			width: 25%;
 		}
 	}
 }
