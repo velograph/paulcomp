@@ -206,3 +206,11 @@ add_role('dealer', 'Dealer', array(
     'edit_posts' => true,
     'delete_posts' => false, // Use false to explicitly deny
 ));
+
+// Force price to show on variation products
+add_filter('woocommerce_available_variation', function ($value, $object = null, $variation = null) {
+if ($value['price_html'] == '') {
+$value['price_html'] = '<span class="price">' . $variation->get_price_html() . '</span>';
+}
+return $value;
+}, 10, 3);
