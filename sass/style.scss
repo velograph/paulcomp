@@ -372,3 +372,25 @@ body {
 		}
 	}
 }
+
+.four-oh-four {
+	position: relative;
+	.background-image {
+	}
+	.message {
+		color: $background;
+		left: 50%;
+		padding: $ten $fifteen;
+		position: absolute;
+		text-align: center;
+		top: 100px;
+		@include transform(translateX(-50%));
+		@include media( $mobile ) {
+			font-size: $h4-font-size;
+		}
+		.button {
+			display: inline-block;
+			margin-top: $twentyfive;
+		}
+	}
+}
