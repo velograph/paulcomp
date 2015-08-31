@@ -62,3 +62,43 @@
 		@include span-columns(6);
 	}
 }
+
+.woocommerce-checkout {
+	.woocommerce-info {
+		@include row();
+		margin-bottom: $twentyfive;
+	}
+	.checkout_coupon {
+		input[type="text"] {
+			width: 25%;
+		}
+		input[type="submit"] {
+			background: $light-gray;
+			margin-bottom: $twentyfive;
+			&:hover {
+				background: $orange;
+			}
+		}
+	}
+	.checkout {
+		@include row();
+		.customer-information {
+			@include media( $large-screen ) {
+				@include span-columns(6);
+			}
+		}
+		.review-order {
+			@include media( $large-screen ) {
+				@include span-columns(6);
+			}
+			label[for="payment_method_intuit_qbms"] {
+				@include row();
+				text-indent: -9999px;
+				img {
+					@include span-columns(2);
+					@include omega;
+				}
+			}
+		}
+	}
+}
