@@ -20,7 +20,7 @@
 
 		<?php elseif ( is_search() ) : ?>
 
-			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'Paul Component Engineering' ); ?></p>
+			<p><?php _e( 'That doesn\'t appear to be on the site. Try searching another term.', 'Paul Component Engineering' ); ?></p>
 			<?php get_search_form(); ?>
 
 		<?php else : ?>
