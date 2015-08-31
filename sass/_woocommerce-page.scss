@@ -14,22 +14,50 @@
 			}
 		}
 		.product-remove {
-			@include span-columns(1);
+			@include media( $large-screen ) {
+				@include span-columns(1);
+			}
 		}
 		.product-thumbnail {
-			@include span-columns(2);
+			@include media( $large-screen ) {
+				@include span-columns(2);
+			}
 		}
 		.product-name {
-			@include span-columns(3);
+			@include span-columns(6);
+			@include media( $mobile ) {
+				margin-bottom: $fifteen;
+			}
+			@include media( $large-screen ) {
+				@include span-columns(3);
+			}
 		}
 		.product-price {
-			@include span-columns(2);
+			@include span-columns(6);
+			@include omega;
+			@include media( $mobile ) {
+				margin-bottom: $fifteen;
+				text-align: right;
+			}
+			@include media( $large-screen ) {
+				@include span-columns(2);
+			}
 		}
 		.product-quantity {
-			@include span-columns(2);
+			@include span-columns(6);
+			@include media( $large-screen ) {
+				@include span-columns(2);
+			}
 		}
 		.product-subtotal {
-			@include span-columns(2);
+			@include span-columns(6);
+			@include omega;
+			@include media( $mobile ) {
+				text-align: right;
+			}
+			@include media( $large-screen ) {
+				@include span-columns(2);
+			}
 		}
 	}
 }
@@ -38,7 +66,9 @@
 	@include row();
 	padding-top: $fifty;
 	.coupons {
-		@include span-columns(6);
+		@include media( $large-screen ) {
+			@include span-columns(6);
+		}
 		.coupon {
 			margin-bottom: $twentyfive;
 			width: 50%;
@@ -50,6 +80,7 @@
 			}
 		}
 		.update-cart {
+			margin-bottom: $twentyfive;
 			input[type="submit"] {
 				background: $light-gray;
 				&:hover {
@@ -59,7 +90,13 @@
 		}
 	}
 	.cart-collaterals {
-		@include span-columns(6);
+		@include media( $large-screen ) {
+			@include span-columns(6);
+		}
+		.wc-proceed-to-checkout {
+			@include row();
+			margin: $twentyfive 0;
+		}
 	}
 }
 
