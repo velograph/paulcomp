@@ -279,6 +279,9 @@ body {
 					}
 				}
 			}
+			h6 {
+				color: $orange;
+			}
 			&:nth-child(even) {
 				@include omega;
 			}

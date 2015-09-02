@@ -26,7 +26,7 @@ get_header( 'shop' ); ?>
 	$children = get_term_children($term->term_id, get_query_var('taxonomy')); // get children
 	if(($parent->term_id!="" && sizeof($children)>0)) : ?>
 
-		<!-- Has parent and children -->
+		Has parent and children
 
 		<?php $terms = wp_get_post_terms( $post->ID, 'product_cat' );
 		if ( !empty( $terms ) && !is_wp_error( $terms ) ) : ?>
@@ -42,6 +42,8 @@ get_header( 'shop' ); ?>
 					) );
 					?>
 
+					<div class="portal-container page-content">
+
 					<?php
 					// now run a query for each product family
 					foreach( $terms as $term ) {
@@ -49,59 +51,62 @@ get_header( 'shop' ); ?>
 						// Define the query
 						$args = array(
 							'post_type' => 'product',
-							'product_cat' => $term->slug
+							'product_cat' => $term->slug,
+							'orderby' => 'menu_order',
+							'order' => 'ASC'
 						);
 						$query = new WP_Query( $args ); ?>
 
-						<h2><?php echo $term->name; ?></h2>
 
-						<div class="portal-container page-content">
+							<?php while ( $query->have_posts() ) : ?>
 
-							<?php while ( $query->have_posts() ) : $query->the_post(); ?>
+								<?php $query->the_post(); ?>
 
-							<div class="portal" id="post-<?php the_ID(); ?>">
-								<a href="<?php the_permalink(); ?>">
-									<?php $mobile_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-mobile'); ?>
-									<?php $tablet_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-tablet'); ?>
-									<?php $desktop_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-desktop'); ?>
-									<?php $retina_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-retina'); ?>
+								<div class="portal" id="post-<?php the_ID(); ?>">
+									<a href="<?php the_permalink(); ?>">
+										<?php $mobile_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-mobile'); ?>
+										<?php $tablet_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-tablet'); ?>
+										<?php $desktop_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-desktop'); ?>
+										<?php $retina_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-retina'); ?>
 
-									<picture>
-										<!--[if IE 9]><video style="display: none"><![endif]-->
-										<source
-											srcset="<?php echo $mobile_page_banner[0]; ?>"
-											media="(max-width: 500px)" />
-										<source
-											srcset="<?php echo $tablet_page_banner[0]; ?>"
-											media="(max-width: 860px)" />
-										<source
-											srcset="<?php echo $desktop_page_banner[0]; ?>"
-											media="(max-width: 1180px)" />
-										<source
-											srcset="<?php echo $retina_page_banner[0]; ?>"
-											media="(min-width: 1181px)" />
-										<!--[if IE 9]></video><![endif]-->
-										<img srcset="<?php echo $image[0]; ?>">
-									</picture>
-									<h4>
-										<?php the_title(); ?>
-									</h4>
-								</a>
-							</div>
+										<picture>
+											<!--[if IE 9]><video style="display: none"><![endif]-->
+											<source
+												srcset="<?php echo $mobile_page_banner[0]; ?>"
+												media="(max-width: 500px)" />
+											<source
+												srcset="<?php echo $tablet_page_banner[0]; ?>"
+												media="(max-width: 860px)" />
+											<source
+												srcset="<?php echo $desktop_page_banner[0]; ?>"
+												media="(max-width: 1180px)" />
+											<source
+												srcset="<?php echo $retina_page_banner[0]; ?>"
+												media="(min-width: 1181px)" />
+											<!--[if IE 9]></video><![endif]-->
+											<img srcset="<?php echo $image[0]; ?>">
+										</picture>
+										<h4>
+											<?php the_title(); ?>
+										</h4>
+										<h6><?php echo $term->name; ?></h6>
+
+									</a>
+								</div>
 
 							<?php endwhile; ?>
 
-						</div>
 
 						<?php wp_reset_postdata(); } ?>
 				<?php endif; ?>
 			<?php endforeach; ?>
+		</div>
 
 	<?php endif; ?>
 
 	<?php elseif(($parent->term_id!="") && (sizeof($children)==0)) : ?>
 
-		<!-- Has parent, no children -->
+		Has parent, no children
 
 		<?php if ( have_posts() ) : ?>
 
@@ -136,6 +141,7 @@ get_header( 'shop' ); ?>
 							<h4>
 								<?php the_title(); ?>
 							</h4>
+							<h6><?php echo $term->name; ?></h6>
 						</a>
 					</div>
 
@@ -147,7 +153,7 @@ get_header( 'shop' ); ?>
 
 	<?php elseif(($parent->term_id=="") && (sizeof($children)>0)) : ?>
 
-		<!-- No parent, has children -->
+		No parent, has children
 
 		<?php if( is_tax('product_cat', 'components') ) : ?>
 
