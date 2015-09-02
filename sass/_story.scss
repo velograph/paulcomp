@@ -1,4 +1,7 @@
 .story-sections {
+	h1 {
+		margin-bottom: $ten;
+	}
 	p:last-child {
 		margin-bottom: 0;
 	}
@@ -88,7 +91,7 @@
 		}
 	}
 	.call-to-action {
-		background: $gray;
+		background: $light-gray;
 		.page-content {
 			color: $background;
 			text-align: center;
@@ -104,9 +107,20 @@
 				@include media( $mobile ) {
 					font-size: $h4-font-size;
 				}
+				&:hover {
+					color: $background;
+				}
 			}
 			.call-to-action-image {
 			}
+		}
+	}
+	.medium-scheme {
+		background: $light-gray;
+		color: $background;
+		h1, h2,
+		h3 {
+			color: $orange;
 		}
 	}
 	.dark-scheme {
@@ -118,7 +132,7 @@
 		}
 	}
 	.light-scheme {
-		background: $white;
+		background: $background;
 		color: $black;
 		h1, h2,
 		h3, h4 {

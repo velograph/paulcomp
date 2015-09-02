@@ -237,6 +237,7 @@ get_header(); ?>
 
 				<?php else: ?>
 					<div class="product-story">
+						<h4>Product Story</h4>
 						<?php the_content(); ?>
 					</div>
 				<?php endif; ?>
@@ -246,12 +247,14 @@ get_header(); ?>
 			<?php if( get_field( 'video_embed' ) ) : ?>
 				<section class="product-section product-bottom">
 					<div class="product-story">
+						<h4>Product Story</h4>
 						<?php the_content(); ?>
 					</div>
 				</section>
 			<?php endif; ?>
 
 			<section class="product-section related-products">
+				<h4>Related Products</h4>
 				<?php
 					remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 					remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );

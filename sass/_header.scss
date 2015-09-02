@@ -34,7 +34,7 @@
 		.menu-hook {
 			color: $offwhite;
 			font: {
-				size: 12px;
+				size: 16px;
 				weight: bold;
 			}
 			text-transform: uppercase;
@@ -160,7 +160,7 @@
 				text-align: right;
 				ul {
 					@include display(inline-flex);
-					margin: $twenty $ten 0 0;
+					margin: 48px $ten 0 0;
   					li {
  						@include flex-direction(row-reverse);
  						margin-bottom: 7px;

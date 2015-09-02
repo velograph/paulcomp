@@ -37,6 +37,9 @@
 		.product-add-to-cart {
 			h4 {
 				margin-bottom: $twentyfive;
+				@include media( $mobile ) {
+					font-size: 22px;
+				}
 			}
 			table,
 			td {
@@ -62,9 +65,21 @@
 				margin-bottom: $twentyfive;
 				.label {
 					width: 33.3%;
+					label {
+						font-weight: 400;
+					}
 				}
 				.value {
 					width: 66.6%;
+					select {
+						border-radius: 0;
+					}
+					a {
+						color: $gray;
+						&:hover {
+							color: $orange;
+						}
+					}
 				}
 				select {
 					margin-bottom: $fifteen;
@@ -82,10 +97,14 @@
 						@include span-columns(2);
 						@include shift(1);
 						input[type="number"] {
-							padding: $ten 4px $ten 7px;
+							border-radius: 0;
+							padding: $ten 4px $five 7px;
 						}
 					}
 					.single_add_to_cart_button {
+						@include media( $mobile ) {
+							font-size: 16px;
+						}
 						@include span-columns(8);
 						@include shift(1);
 						@include omega;
@@ -95,15 +114,25 @@
 		}
 	}
 	.product-middle {
+		padding: $twentyfive 0;
 		.tech-specs {
 			ul {
 				li {
+					font-weight: 400;
 					.key {
 						@include span-columns(6);
 					}
 					.value {
 						@include span-columns(6);
-						text-align: right;
+						.accordion-hook {
+							color: $orange;
+							&:hover {
+								cursor: pointer;
+							}
+						}
+						p {
+							font-size: 16px;
+						}
 					}
 				}
 			}
@@ -113,12 +142,19 @@
 		}
 		.product-story {
 			@include media( $large-screen ) {
-				@include span-columns(5);
+				@include span-columns(4);
 				@include shift(1);
 			}
 		}
 	}
 	.related-products {
+		h2 {
+			display: none;
+		}
+		h4 {
+			color: $gray;
+			font-size: 22px;
+		}
 		.products {
 			@include outer-container;
 			.product {

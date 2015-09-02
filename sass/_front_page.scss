@@ -57,8 +57,9 @@
 	.page-lead-in {
 		.lead-in-copy {
 			@include media( $large-screen ) {
-				@include span-columns(8);
-				@include shift(2);
+				@include span-columns(10);
+				@include shift(1);
+				text-align: center;
 			}
 			p {
 				color: $dark-gray;
@@ -69,13 +70,15 @@
 		@include outer-container;
 		h1 {
 			color: $orange;
+			margin-bottom: $ten;
 			text-align: center;
 		}
 		h4 {
-			margin-bottom: $fifty;
+			margin-bottom: $twentyfive;
 			text-align: center;
 		}
 		.story-image {
+			margin-bottom: $twentyfive;
 			@include media( $large-screen ) {
 				@include span-columns(5);
 				@include shift(1);

@@ -57,7 +57,6 @@ body {
 		border-radius: 0;
 		color: $gray;
 		font: {
-			family: Helvetica;
 			size: 12px;
 			weight: 300;
 		}
@@ -73,6 +72,10 @@ body {
 		clip: rect(1px, 1px, 1px, 1px);
 		position: absolute;
 		text-indent: -9999px;
+	}
+	button {
+		font-family: $source_pro;
+		font-size: 20px;
 	}
 	.button,
 	.wc-proceed-to-checkout a {
@@ -209,7 +212,7 @@ body {
 			}
 			.mobile-arrow-up {
 				opacity: 0;
-				border-bottom: $fifteen solid $light-gray;
+				border-bottom: $fifteen solid $white;
 				border-left: $fifteen solid transparent;
 				border-right: $fifteen solid transparent;
 				bottom: 0;
@@ -233,7 +236,7 @@ body {
 		}
 	}
 	.mobile-tab-title {
-		background: $light-gray;
+		background: $white;
 		color: $orange;
 		padding: $fifteen 0;
 		text-align: center;
@@ -243,6 +246,10 @@ body {
 	}
 	.portal-container {
 		@include outer-container;
+		padding: $fifty 0;
+		@include media( $large-screen ) {
+			padding: 100px 0;
+		}
 		.portal {
 			@include span-columns(6);
 			margin-bottom: $fifty;
@@ -293,18 +300,24 @@ body {
 
 .breadcrumbs-container {
 	@include row();
-	background: $light-gray;
+	background: $white;
 	.breadcrumbs {
-		@include outer-container;
-		color: $orange;
-		font-weight: 900;
-		padding: $twentyfive 0;
-		a,
-		.end-crumb {
-			color: $gray;
-			font-size: $h4-font-size;
+		.woocommerce-breadcrumb {
+			@include outer-container;
+			color: $orange;
 			font-weight: 900;
-			text-transform: uppercase;
+			padding: $fifteen $twentyfive;
+			a,
+			.end-crumb {
+				color: $gray;
+				font-size: 16px;
+				@include media( $large-screen ) {
+					font-size: $h4-font-size;
+				}
+				font-weight: 900;
+				text-transform: uppercase;
+				vertical-align: middle;
+			}
 		}
 	}
 }
@@ -351,8 +364,17 @@ body {
 		}
 		.column {
 			margin-bottom: $fifty;
+		}
+		.column-one {
 			@include media( $large-screen ) {
-				@include span-columns(6);
+				@include span-columns(4);
+				@include shift(2);
+			}
+		}
+		.column-two {
+			@include media( $large-screen ) {
+				@include span-columns(4);
+				@include shift(1);
 			}
 		}
 	}

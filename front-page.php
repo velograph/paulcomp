@@ -100,42 +100,6 @@ get_header(); ?>
 
 	<section class="portal-container">
 
-		<div class="leading-shop-image">
-
-			<?php $mobile_page_banner = wp_get_attachment_image_src(get_field('main_shop_image'), 'page-banner-mobile'); ?>
-			<?php $tablet_page_banner = wp_get_attachment_image_src(get_field('main_shop_image'), 'page-banner-tablet'); ?>
-			<?php $desktop_page_banner = wp_get_attachment_image_src(get_field('main_shop_image'), 'page-banner-desktop'); ?>
-			<?php $retina_page_banner = wp_get_attachment_image_src(get_field('main_shop_image'), 'page-banner-retina'); ?>
-
-			<a href="/shop">
-				<picture>
-					<!--[if IE 9]><video style="display: none"><![endif]-->
-					<source
-						srcset="<?php echo $mobile_page_banner[0]; ?>"
-						media="(max-width: 500px)" />
-					<source
-						srcset="<?php echo $tablet_page_banner[0]; ?>"
-						media="(max-width: 860px)" />
-					<source
-						srcset="<?php echo $desktop_page_banner[0]; ?>"
-						media="(max-width: 1180px)" />
-					<source
-						srcset="<?php echo $retina_page_banner[0]; ?>"
-						media="(min-width: 1181px)" />
-					<!--[if IE 9]></video><![endif]-->
-					<img srcset="<?php echo $image[0]; ?>">
-				</picture>
-
-				<div class="overlay">
-					<h1 class="thumb-title">
-						Shop
-					</h1>
-				</div>
-
-			</a>
-
-		</div>
-
 		<div class="shop-portals">
 
 			<div id="tabs">

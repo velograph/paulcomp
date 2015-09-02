@@ -63,7 +63,7 @@
 }
 .top-footer {
 	@include row();
-	background: $dark-gray;
+	background: #3e4649;
 	color: $offwhite;
 	padding: $twentyfive 0;
 	text-align: center;
@@ -78,6 +78,9 @@
 			&:hover {
 				color: $white;
 			}
+		}
+		h5 {
+			color: $background;
 		}
 		.paul-logo {
 			@include media( $large-screen ) {

@@ -146,7 +146,7 @@ get_header(); ?>
 
 						<?php if( get_row_layout() == 'lead_in_copy' ) : ?>
 
-							<div class="lead-in-copy <?php if( get_sub_field('color_scheme') == 'Light text on dark background' ) : ?>light-scheme <?php else: ?>dark-scheme<?php endif; ?>">
+							<div class="lead-in-copy <?php if( get_sub_field('color_scheme') == 'Light text on dark background' ) : ?>light-scheme <?php elseif( get_sub_field('color_scheme') == 'Light text on medium background' ) : ?>medium-scheme <?php elseif( get_sub_field('color_scheme') == 'Dark text on light background' ) : ?>dark-scheme<?php endif; ?>">
 
 								<div class="page-content">
 

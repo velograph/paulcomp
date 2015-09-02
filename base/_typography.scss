@@ -20,13 +20,15 @@ h6 {
 }
 
 h1 {
+    letter-spacing: 2px;
+    line-height: 1.15;
+    text-transform: uppercase;
     font: {
         size: $h1-font-size / 1.5;
         weight: 700;
     }
-    letter-spacing: 2px;
-    text-transform: uppercase;
     @include media( $large-screen ) {
+        line-height: 1.25;
         font: {
             size: $h1-font-size;
             weight: 700;
@@ -103,12 +105,12 @@ h6 {
 
 .lead-in-copy {
     p {
-        line-height: 42px;
         font: {
             size: $h3-font-size / 1.5;
             weight: 300;
         }
         @include media( $large-screen ) {
+            line-height: 42px;
             font: {
                 size: $h3-font-size;
             }
@@ -121,7 +123,7 @@ h6 {
 
 p {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 32px;
     margin: 0 0 ($base-spacing / 2);
 }

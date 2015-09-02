@@ -47,12 +47,12 @@ get_header(); ?>
 					<h1><?php the_title(); ?></h1>
 				</div>
 
-				<div class="column lead-in-copy">
+				<div class="column column-one lead-in-copy">
 					<h4>Headquarters</h4>
 					<?php the_field('column_one'); ?>
 				</div>
 
-				<div class="column lead-in-copy">
+				<div class="column column-two lead-in-copy">
 					<h4>Email</h4>
 					<?php the_field('column_two'); ?>
 				</div>
