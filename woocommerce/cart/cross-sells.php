@@ -35,17 +35,48 @@ $woocommerce_loop['columns'] = apply_filters( 'woocommerce_cross_sells_columns',
 
 if ( $products->have_posts() ) : ?>
 
-	<div class="cross-sells">
+	<div class="cross-sells shop-portals">
 
-		<h2><?php _e( 'You may be interested in&hellip;', 'woocommerce' ) ?></h2>
+		<h4><?php _e( 'You may be interested in&hellip;', 'woocommerce' ) ?></h4>
 
 		<?php woocommerce_product_loop_start(); ?>
 
-			<?php while ( $products->have_posts() ) : $products->the_post(); ?>
+			<div class="portal-container">
 
-				<?php wc_get_template_part( 'content', 'product' ); ?>
+				<?php while ( $products->have_posts() ) : $products->the_post(); ?>
 
-			<?php endwhile; // end of the loop. ?>
+					<div class="portal" id="post-<?php the_ID(); ?>">
+						<a href="<?php the_permalink(); ?>">
+							<?php $mobile_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-mobile'); ?>
+							<?php $tablet_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-tablet'); ?>
+							<?php $desktop_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-desktop'); ?>
+							<?php $retina_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'page-banner-retina'); ?>
+
+							<picture>
+								<!--[if IE 9]><video style="display: none"><![endif]-->
+								<source
+									srcset="<?php echo $mobile_page_banner[0]; ?>"
+									media="(max-width: 500px)" />
+								<source
+									srcset="<?php echo $tablet_page_banner[0]; ?>"
+									media="(max-width: 860px)" />
+								<source
+									srcset="<?php echo $desktop_page_banner[0]; ?>"
+									media="(max-width: 1180px)" />
+								<source
+									srcset="<?php echo $retina_page_banner[0]; ?>"
+									media="(min-width: 1181px)" />
+								<!--[if IE 9]></video><![endif]-->
+								<img srcset="<?php echo $image[0]; ?>">
+							</picture>
+							<h4>
+								<?php the_title(); ?>
+							</h4>
+						</a>
+					</div>
+
+				<?php endwhile; // end of the loop. ?>
+			</div>
 
 		<?php woocommerce_product_loop_end(); ?>
 

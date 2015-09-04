@@ -419,3 +419,22 @@ body {
 		}
 	}
 }
+
+.maintenance {
+	position: relative;
+	h3 {
+		margin-bottom: $twentyfive;
+	}
+	.logo {
+		@include span-columns(2);
+		@include shift(5);
+		margin-bottom: $fifty;
+		@include media( $large-screen) {
+			padding-top: $hundred;
+		}
+	}
+	.info {
+		@include span-columns(6);
+		@include shift(3);
+	}
+}

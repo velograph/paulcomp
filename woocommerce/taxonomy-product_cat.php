@@ -26,7 +26,7 @@ get_header( 'shop' ); ?>
 	$children = get_term_children($term->term_id, get_query_var('taxonomy')); // get children
 	if(($parent->term_id!="" && sizeof($children)>0)) : ?>
 
-		Has parent and children
+		<!-- Has parent and children -->
 
 		<?php $terms = wp_get_post_terms( $post->ID, 'product_cat' );
 		if ( !empty( $terms ) && !is_wp_error( $terms ) ) : ?>
@@ -106,7 +106,7 @@ get_header( 'shop' ); ?>
 
 	<?php elseif(($parent->term_id!="") && (sizeof($children)==0)) : ?>
 
-		Has parent, no children
+		<!-- Has parent, no children -->
 
 		<?php if ( have_posts() ) : ?>
 
@@ -153,7 +153,7 @@ get_header( 'shop' ); ?>
 
 	<?php elseif(($parent->term_id=="") && (sizeof($children)>0)) : ?>
 
-		No parent, has children
+		<!-- No parent, has children -->
 
 		<?php if( is_tax('product_cat', 'components') ) : ?>
 

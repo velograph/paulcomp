@@ -237,7 +237,14 @@ get_header(); ?>
 
 				<?php else: ?>
 					<div class="product-story">
+						<?php
+							if($post->content=="")
+							{ ?>
+							<?php } else {
+						?>
 						<h4>Product Story</h4>
+
+						<?php } ?>
 						<?php the_content(); ?>
 					</div>
 				<?php endif; ?>

@@ -60,7 +60,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 			<?php elseif ( is_cart() ) : ?>
 
-				<p><?php _e( 'Please continue to the checkout and enter your full address to see if there are any available shipping methods.', 'woocommerce' ); ?></p>
+				<p><?php _e( 'Please continue to the checkout to choose your shipping method.', 'woocommerce' ); ?></p>
 
 			<?php else : ?>
 

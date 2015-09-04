@@ -91,7 +91,8 @@
 	}
 	.cart-collaterals {
 		@include media( $large-screen ) {
-			@include span-columns(6);
+			clear: both;
+			// @include span-columns(6);
 		}
 		.wc-proceed-to-checkout {
 			@include row();
@@ -130,10 +131,24 @@
 			}
 			label[for="payment_method_intuit_qbms"] {
 				@include row();
-				text-indent: -9999px;
 				img {
-					@include span-columns(2);
-					@include omega;
+					display: inline-block;
+					width: 14%;
+				}
+			}
+			.payment_methods {
+				li {
+					.shipping-method-label {
+						display: block;
+					}
+					&.payment_method_paypal {
+						img {
+							width: 50%;
+						}
+						.about_paypal {
+							display: block;
+						}
+					}
 				}
 			}
 		}
