@@ -97,13 +97,14 @@
 	padding-top: $fifteen;
 	@include media( $large-screen ) {
 		display: block;
-	}
+	}fa
 	.inner-container {
 		@include outer-container;
 		.account-link {
 			@include shift(7);
 			@include span-columns(2);
 			font-size: 16px;
+			height: 20px;
 			padding-top: 3px;
 			text-align: right;
 			.account-title {
@@ -112,6 +113,7 @@
 		.cart-link {
 			@include span-columns(1);
 			font-size: 16px;
+			height: 20px;
 			padding-top: 3px;
 			text-align: right;
 			.cart-title {
@@ -149,7 +151,7 @@
 		.main-navigation {
 			.site-branding {
 				@include span-columns(3);
-				svg {
+				img, svg {
 					margin-bottom: $ten;
 					padding-left: $fifty;
 					width: 75%;

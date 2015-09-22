@@ -214,3 +214,13 @@ $value['price_html'] = '<span class="price">' . $variation->get_price_html() . '
 }
 return $value;
 }, 10, 3);
+
+/* Reset status of new orders from "on-hold" to "processing" */
+add_action( 'woocommerce_thankyou', 'custom_woocommerce_auto_complete_order' );
+function custom_woocommerce_auto_complete_order( $order_id ) {
+    global $woocommerce;
+     if ( !$order_id )
+        return;
+    $order = new WC_Order( $order_id );
+    $order->update_status( 'processing' );
+}
