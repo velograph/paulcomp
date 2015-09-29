@@ -225,6 +225,7 @@ function custom_woocommerce_auto_complete_order( $order_id ) {
     $order->update_status( 'processing' );
 }
 
+
 /**
  * Apply a different tax rate based on the user role.
  */
