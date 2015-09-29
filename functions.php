@@ -224,3 +224,15 @@ function custom_woocommerce_auto_complete_order( $order_id ) {
     $order = new WC_Order( $order_id );
     $order->update_status( 'processing' );
 }
+
+/**
+ * Apply a different tax rate based on the user role.
+ */
+function wc_diff_rate_for_user( $tax_class, $product ) {
+	if ( is_user_logged_in() && current_user_can( 'dealer' ) ) {
+		$tax_class = 'Zero Rate';
+	}
+
+	return $tax_class;
+}
+add_filter( 'woocommerce_product_tax_class', 'wc_diff_rate_for_user', 1, 2 );
