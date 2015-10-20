@@ -97,7 +97,7 @@
 	padding-top: $fifteen;
 	@include media( $large-screen ) {
 		display: block;
-	}fa
+	}
 	.inner-container {
 		@include outer-container;
 		.account-link {

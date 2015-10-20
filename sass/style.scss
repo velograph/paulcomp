@@ -151,7 +151,7 @@ body {
 			.overlay {
 				background: $overlay;
 				height: 100%;
-				opacity: 0;
+				opacity: 1;
 				position: absolute;
 				@include transition(opacity 0.2s ease-in-out);
 				width: 100%;

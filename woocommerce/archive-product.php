@@ -18,7 +18,7 @@ get_header(); ?>
 
 		<section class="portal-container">
 
-			<div class="leading-shop-image">
+			<!-- <div class="leading-shop-image">
 
 				<?php $mobile_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'page-banner-mobile'); ?>
 				<?php $tablet_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'page-banner-tablet'); ?>
@@ -26,7 +26,7 @@ get_header(); ?>
 				<?php $retina_page_banner = wp_get_attachment_image_src( get_post_thumbnail_id( 8 ), 'page-banner-retina'); ?>
 
 				<picture>
-					<!--[if IE 9]><video style="display: none"><![endif]-->
+					<!--[if IE 9]><video style="display: none"><![endif]
 					<source
 						srcset="<?php echo $mobile_page_banner[0]; ?>"
 						media="(max-width: 500px)" />
@@ -39,7 +39,7 @@ get_header(); ?>
 					<source
 						srcset="<?php echo $retina_page_banner[0]; ?>"
 						media="(min-width: 1181px)" />
-					<!--[if IE 9]></video><![endif]-->
+					<!--[if IE 9]></video><![endif]
 					<img srcset="<?php echo $image[0]; ?>">
 				</picture>
 
@@ -49,7 +49,7 @@ get_header(); ?>
 					</h1>
 				</div>
 
-			</div>
+			</div> -->
 
 			<div class="shop-portals">
 
