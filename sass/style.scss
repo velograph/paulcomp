@@ -253,7 +253,6 @@ body {
 		.portal {
 			@include span-columns(6);
 			margin-bottom: $fifty;
-			position: relative;
 			text-align: center;
 			@include media( $large-screen ) {
 				@include span-columns(3);
@@ -284,6 +283,11 @@ body {
 			}
 			&:nth-child(even) {
 				@include omega;
+			}
+			@include media( $large-screen ) {
+				&:nth-child(even) {
+					@include omega(0);
+				}
 			}
 		}
 		@include media( $large-screen ) {
@@ -436,5 +440,98 @@ body {
 	.info {
 		@include span-columns(6);
 		@include shift(3);
+	}
+}
+
+.dealer-application {
+	#gform_fields_1 {
+		display: none;
+	}
+	.gform_wrapper {
+		.gfield_label {
+			color: $gray;
+			font-size: 14px;
+			font-weight: 400;
+		}
+		.two-column {
+			.gform_title {
+				display: none;
+			}
+			.gsection_title {
+				font: {
+					size: $h4-font-size;
+					weight: 400;
+				}
+			}
+			.gform_column {
+				margin-bottom: $fifty !important;
+				@include media( $large-screen ) {
+					@include span-columns(6);
+				}
+				li.gfield {
+					@include media( $large-screen ) {
+						padding: 0 $fifty 0 0;
+					}
+					label {
+						font-weight: 400;
+					}
+					&.gf_left_third {
+						padding: 0;
+						width: 100%;
+						@include media( $large-screen ) {
+							padding: 0 $fifty 0 0;
+							width: 31.9%;
+						}
+					}
+					&.gf_middle_third {
+						padding: 0;
+						width: 100%;
+						@include media( $large-screen ) {
+							padding: 0 $fifty 0 0;
+							width: 31.9%;
+						}
+					}
+					&.gf_right_third {
+						padding: 0;
+						width: 100%;
+						@include media( $large-screen ) {
+							padding: 0 $fifty 0 0;
+							width: 31.9%;
+						}
+					}
+				}
+				.gform_column {
+					display: none;
+				}
+			}
+			#field_1_16,
+			#field_1_24 {
+				.gfield_label {
+					display: none;
+				}
+			}
+			.ginput_container {
+				input[type="text"] {
+					// width: 100%;
+				}
+			}
+			.gsection {
+				border-bottom: none;
+				margin-bottom: $ten;
+				margin-top: 0;
+			}
+			.gfield_label {
+				// margin-bottom: 0;
+			}
+			.empty {
+				display: none;
+			}
+			.row-clear {
+				clear: both;
+			}
+		}
+		.gform_footer {
+			text-align: center;
+		}
 	}
 }

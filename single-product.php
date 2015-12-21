@@ -3,6 +3,7 @@
  * The template for displaying all single posts.
  *
  * @package Paul Component Engineering
+ * @version     2.4.7
  */
 
 get_header(); ?>
@@ -17,15 +18,15 @@ get_header(); ?>
 		    jQuery(".accordion-hook", $dropdown).click(function(e) {
 		      e.preventDefault();
 		      $div = jQuery(".accordion", $dropdown);
-		      $div.toggle('slow');
-		      jQuery(".accordion").not($div).hide('slow');
+		      $div.toggle('blind');
+		      jQuery(".accordion").not($div).hide('blind');
 		      return false;
 		    });
 
 		});
 
 		  jQuery('html').click(function(){
-		    jQuery(".accordion").hide('slow');
+		    jQuery(".accordion").hide('blind');
 		  });
 
 	});
@@ -42,23 +43,34 @@ get_header(); ?>
 			<section class="product-section product-top">
 
 				<script>
-				jQuery(document).ready(function(){
-					jQuery('.product-image').slick({
-					  slidesToShow: 1,
-					  slidesToScroll: 1,
-					  arrows: false,
-					  asNavFor: '.product-thumbs'
-					});
-					jQuery('.product-thumbs').slick({
-					  slidesToShow: 3,
-					  slidesToScroll: 1,
-					  arrows: false,
-					  asNavFor: '.product-image',
-					  dots: false,
-					  focusOnSelect: true
-					});
-				});
+					jQuery(document).ready(function(){
+						jQuery('.product-image').slick({
+						  slidesToShow: 1,
+						  slidesToScroll: 1,
+						  arrows: false,
+						  asNavFor: '.product-thumbs'
+						});
+						jQuery('.product-thumbs').slick({
+						  slidesToShow: 3,
+						  slidesToScroll: 1,
+						  arrows: false,
+						  asNavFor: '.product-image',
+						  dots: false,
+						  focusOnSelect: true
+						});
 
+						jQuery('.supporting-video-container').slick({
+						  slidesToShow: 1,
+						  slidesToScroll: 1,
+						  dots: true,
+						  arrows: false,
+						});
+
+						var video_width = jQuery('.supporting-video-container').width();
+						var iframe_height = ( video_width * ('.' + 75) );
+						jQuery('.supporting-video-container').css('height', iframe_height);
+						jQuery('.supporting-video iframe').css('height', iframe_height);
+					});
 				</script>
 
 				<div class="product-gallery-container">
@@ -146,32 +158,36 @@ get_header(); ?>
 
 					<h4><?php the_title(); ?></h4>
 
-					<?php if( $product->is_type( 'simple' ) ) { ?>
+					<?php if( $product->is_type( 'simple' ) ) : ?>
 
-						<?php if ( $price_html = $product->get_price_html() ) : ?>
-							<h3><span class="price"><?php echo $price_html; ?></span></h3>
-						<?php endif; ?>
+						<div class="simple-product">
+							<?php if ( $price_html = $product->get_price_html() ) : ?>
+								<h3><span class="price"><?php echo $price_html; ?></span></h3>
+							<?php endif; ?>
 
-					<?php } ?>
+					<?php endif; ?>
+						<?php
+							/**
+							* woocommerce_single_product_summary hook
+							*
+							* @hooked woocommerce_template_single_title - 5
+							* @hooked woocommerce_template_single_rating - 10
+							* @hooked woocommerce_template_single_price - 10
+							* @hooked woocommerce_template_single_excerpt - 20
+							* @hooked woocommerce_template_single_add_to_cart - 30
+							* @hooked woocommerce_template_single_meta - 40
+							* @hooked woocommerce_template_single_sharing - 50
+							*/
+							remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+							remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+							remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+							remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+							do_action( 'woocommerce_single_product_summary' );
+						?>
+					<?php if( $product->is_type( 'simple' ) ) : ?>
+						</div>
+					<?php endif; ?>
 
-					<?php
-						/**
-						* woocommerce_single_product_summary hook
-						*
-						* @hooked woocommerce_template_single_title - 5
-						* @hooked woocommerce_template_single_rating - 10
-						* @hooked woocommerce_template_single_price - 10
-						* @hooked woocommerce_template_single_excerpt - 20
-						* @hooked woocommerce_template_single_add_to_cart - 30
-						* @hooked woocommerce_template_single_meta - 40
-						* @hooked woocommerce_template_single_sharing - 50
-						*/
-						remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
-						remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
-						remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-						remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-						do_action( 'woocommerce_single_product_summary' );
-					?>
 					<div class="lead-in-copy">
 						<?php the_excerpt(); ?>
 					</div>
@@ -228,11 +244,18 @@ get_header(); ?>
 
 				</div>
 
-				<?php if( get_field( 'video_embed' ) ) : ?>
-					<div class="supporting-video">
+				<?php if( have_rows('video_repeater') ) : ?>
 
-						<?php the_field('video_embed'); ?>
+					<div class="supporting-video-container">
+					    <?php while ( have_rows('video_repeater') ) : ?>
 
+					        <?php the_row(); ?>
+
+							<div class="supporting-video">
+								<?php the_sub_field('video'); ?>
+							</div>
+
+					    <?php endwhile; ?>
 					</div>
 
 				<?php else: ?>
@@ -261,7 +284,7 @@ get_header(); ?>
 			<?php endif; ?>
 
 			<section class="product-section related-products">
-				<h4>Related Products</h4>
+				<!-- <h4>Related Products</h4> -->
 				<?php
 					remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
 					remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );

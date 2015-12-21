@@ -125,6 +125,7 @@
 				@include span-columns(6);
 			}
 		}
+		.gift-certificate,
 		.review-order {
 			@include media( $large-screen ) {
 				@include span-columns(6);
@@ -151,6 +152,40 @@
 					}
 				}
 			}
+			.place-order {
+				.terms {
+					label {
+						display: inline;
+					}
+				}
+			}
+		}
+	}
+}
+
+#customer_login {
+	@include row();
+	.col-1 {
+		@include media( $large-screen ) {
+			@include span-columns(4);
+			@include shift(2);
+		}
+		.inline {
+			display: inline;
+		}
+		.lost_password {
+			font-size: 14px;
+			a {
+				color: $medium-gray;
+				&:hover {
+					color: $orange;
+				}
+			}
+		}
+	}
+	.col-2 {
+		@include media( $large-screen ) {
+			@include span-columns(4);
 		}
 	}
 }

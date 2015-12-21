@@ -3,6 +3,7 @@
  * Template Name: Shop
  *
  * @package Paul Component Engineering
+ * @version     2.0.0
  */
 
 get_header(); ?>
