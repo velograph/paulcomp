@@ -51,6 +51,9 @@
 	}
 	.product-top {
 		.product-add-to-cart {
+			.stock {
+				display: none;
+			}
 			.simple-product {
 				@include media( $large-screen ) {
 					h3 {
@@ -63,7 +66,7 @@
 							@include span-columns(3);
 						}
 						.single_add_to_cart_button {
-							@include span-columns(8);
+							@include span-columns(7);
 							@include shift(1);
 						}
 					}
