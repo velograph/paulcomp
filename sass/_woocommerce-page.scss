@@ -138,6 +138,16 @@
 				}
 			}
 			.payment_methods {
+				.payment_method_paypal_pro_payflow {
+					img {
+						max-width: 198px !important;
+					}
+				}
+				.payment_method_paypal_express {
+					img {
+						max-width: 188px !important;
+					}
+				}
 				li {
 					.shipping-method-label {
 						display: block;
