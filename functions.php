@@ -273,6 +273,15 @@ function gform_column_splits( $content, $field, $value, $lead_id, $form_id ) {
 }
 add_filter( 'gform_field_content', 'gform_column_splits', 10, 5 );
 
+function filter_media_comment_status( $open, $post_id ) {
+	$post = get_post( $post_id );
+	if( $post->post_type == 'attachment' ) {
+		return false;
+	}
+	return $open;
+}
+add_filter( 'comments_open', 'filter_media_comment_status', 10 , 2 );
+
 // Add Google Analytics
 add_action('wp_footer', 'google_analytics_script');
 function google_analytics_script() { ?>
