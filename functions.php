@@ -273,6 +273,15 @@ function gform_column_splits( $content, $field, $value, $lead_id, $form_id ) {
 }
 add_filter( 'gform_field_content', 'gform_column_splits', 10, 5 );
 
+// Fixes incompatible variations from showing
+// In Woo 2.4 they changed the variations loading script. If there are more than twenty,
+// the page loads all options, no matter if they are real Sku's
+function custom_wc_ajax_variation_threshold( $qty, $product ) {
+	return 75;
+}
+add_filter( 'woocommerce_ajax_variation_threshold', 'custom_wc_ajax_variation_threshold', 10, 2 );
+
+// Remove commenting ability from images
 function filter_media_comment_status( $open, $post_id ) {
 	$post = get_post( $post_id );
 	if( $post->post_type == 'attachment' ) {
