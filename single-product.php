@@ -265,22 +265,23 @@ get_header(); ?>
 							{ ?>
 							<?php } else {
 						?>
-						<h4>Product Story</h4>
-
 						<?php } ?>
+
+						<h4>Product Story</h4>
 						<?php the_content(); ?>
 					</div>
 				<?php endif; ?>
 
 			</section>
 
-			<?php if( get_field( 'video_embed' ) ) : ?>
+			<?php if( have_rows('video_repeater') ) : ?>
 				<section class="product-section product-bottom">
 					<div class="product-story">
 						<h4>Product Story</h4>
 						<?php the_content(); ?>
 					</div>
 				</section>
+			<?php else: ?>
 			<?php endif; ?>
 
 			<section class="product-section related-products">

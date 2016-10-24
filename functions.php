@@ -65,6 +65,60 @@ function paulcomp_setup() {
 endif; // paulcomp_setup
 add_action( 'after_setup_theme', 'paulcomp_setup' );
 
+// Register Custom Post Type
+function videos_post_type() {
+
+	$labels = array(
+		'name'                  => _x( 'Videos', 'Post Type General Name', 'paulcomponents' ),
+		'singular_name'         => _x( 'Video', 'Post Type Singular Name', 'paulcomponents' ),
+		'menu_name'             => __( 'Videos', 'paulcomponents' ),
+		'name_admin_bar'        => __( 'Video', 'paulcomponents' ),
+		'archives'              => __( 'Video Archives', 'paulcomponents' ),
+		'parent_item_colon'     => __( 'Parent Video:', 'paulcomponents' ),
+		'all_items'             => __( 'All Videos', 'paulcomponents' ),
+		'add_new_item'          => __( 'Add New Video', 'paulcomponents' ),
+		'add_new'               => __( 'Add New', 'paulcomponents' ),
+		'new_item'              => __( 'New Video', 'paulcomponents' ),
+		'edit_item'             => __( 'Edit Video', 'paulcomponents' ),
+		'update_item'           => __( 'Update Video', 'paulcomponents' ),
+		'view_item'             => __( 'View Video', 'paulcomponents' ),
+		'search_items'          => __( 'Search Videos', 'paulcomponents' ),
+		'not_found'             => __( 'Not found', 'paulcomponents' ),
+		'not_found_in_trash'    => __( 'Not found in Trash', 'paulcomponents' ),
+		'featured_image'        => __( 'Featured Image', 'paulcomponents' ),
+		'set_featured_image'    => __( 'Set featured image', 'paulcomponents' ),
+		'remove_featured_image' => __( 'Remove featured image', 'paulcomponents' ),
+		'use_featured_image'    => __( 'Use as featured image', 'paulcomponents' ),
+		'insert_into_item'      => __( 'Insert into Video', 'paulcomponents' ),
+		'uploaded_to_this_item' => __( 'Uploaded to this Video', 'paulcomponents' ),
+		'items_list'            => __( 'Items list', 'paulcomponents' ),
+		'items_list_navigation' => __( 'Items list navigation', 'paulcomponents' ),
+		'filter_items_list'     => __( 'Filter items list', 'paulcomponents' ),
+	);
+	$args = array(
+		'label'                 => __( 'Video', 'paulcomponents' ),
+		'description'           => __( 'Videos', 'paulcomponents' ),
+		'labels'                => $labels,
+		'supports'              => array( 'title', 'thumbnail', 'page-attributes', ),
+		'taxonomies'            => array( 'category', 'post_tag' ),
+		'hierarchical'          => true,
+		'public'                => true,
+		'show_ui'               => true,
+		'show_in_menu'          => true,
+		'menu_position'         => 5,
+		'show_in_admin_bar'     => true,
+		'show_in_nav_menus'     => true,
+		'can_export'            => false,
+		'has_archive'           => true,
+		'exclude_from_search'   => true,
+		'publicly_queryable'    => true,
+		'capability_type'       => 'page',
+	);
+	register_post_type( 'video', $args );
+
+}
+add_action( 'init', 'videos_post_type', 0 );
+
 /**
  * Register widget area.
  *

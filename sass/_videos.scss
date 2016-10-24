@@ -1,6 +1,6 @@
 .video-portals {
 	@include outer-container;
-	.portal-row {
+	.portal-container {
 		@include row();
 		.portal {
 			margin-bottom: 2.35765%;
@@ -8,7 +8,20 @@
 				@include span-columns(4);
 				@include omega(3n);
 			}
+			p {
+				margin-bottom: 0;
+			}
 		}
+	}
+}
+
+.single-video-container {
+	@include outer-container;
+	margin-bottom: $hundred;
+	margin-top: $hundred;
+	.video {
+		@include span-columns(10);
+		@include shift(1);
 	}
 }
 
