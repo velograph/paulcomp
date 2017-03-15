@@ -258,7 +258,7 @@ get_header(); ?>
 					    <?php endwhile; ?>
 					</div>
 
-				<?php else: ?>
+				<?php elseif( the_content() ) : ?>
 					<div class="product-story">
 						<?php
 							if($post->content=="")

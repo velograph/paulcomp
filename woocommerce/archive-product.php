@@ -69,7 +69,7 @@ get_header(); ?>
 										$img_id= $result1->meta_value;
 									}
 								?>
-								<img src="<?php echo wp_get_attachment_url( $img_id ); ?>" alt="category image">
+								<img src="https://paulcomp.com/wp-content/uploads/2015/08/klamper_lifestyle_web.jpg" alt="category image">
 
 								<div class="overlay">
 									<h2 class="thumb-title">
@@ -94,7 +94,7 @@ get_header(); ?>
 										$img_id= $result1->meta_value;
 									}
 								?>
-								<img src="<?php echo wp_get_attachment_url( $img_id ); ?>" alt="category image">
+								<img src="https://paulcomp.com/wp-content/uploads/2015/10/service_parts.jpg" alt="category image">
 
 								<div class="overlay">
 									<h2 class="thumb-title">
@@ -119,7 +119,7 @@ get_header(); ?>
 										$img_id= $result1->meta_value;
 									}
 								?>
-								<img src="<?php echo wp_get_attachment_url( $img_id ); ?>" alt="category image">
+								<img src="https://paulcomp.com/wp-content/uploads/2015/08/merchandise_web.jpg" alt="category image">
 
 								<div class="overlay">
 									<h2 class="thumb-title">
