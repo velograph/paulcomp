@@ -158,6 +158,11 @@ get_header(); ?>
 
 					<h4><?php the_title(); ?></h4>
 
+<?php $dealer_user = wp_get_current_user();
+if ( in_array( 'dealer', (array) $dealer_user->roles ) ) { ?>
+	<strong>Dealers: Your pricing will appear in the <a href="/cart">cart</a>. We are currently working on showing your pricing on product pages. Thanks for your patience!</strong><br />
+<?php } ?>
+
 					<?php if( $product->is_type( 'simple' ) ) : ?>
 
 						<div class="simple-product">

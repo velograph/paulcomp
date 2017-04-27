@@ -28,6 +28,7 @@ get_header(); ?>
 		  jQuery( "#tabs" ).tabs();
 	//   }
 
+	  jQuery('.mobile-tab-title').matchHeight();
 	  jQuery('.portal img').matchHeight();
 
 	});
@@ -119,6 +120,7 @@ get_header(); ?>
 								}
 							?>
 							<img src="https://paulcomp.com/wp-content/uploads/2015/08/klamper_lifestyle_web.jpg" alt="category image">
+							<h3 class="mobile-tab-title">Components</h3>
 
 							<div class="overlay">
 								<h2 class="thumb-title">
@@ -126,7 +128,6 @@ get_header(); ?>
 								</h2>
 								<span class="arrow-up">&nbsp;</span>
 							</div>
-							<span class="mobile-arrow-up">&nbsp;</span>
 
 						</a>
 					</li>
@@ -143,6 +144,7 @@ get_header(); ?>
 								}
 							?>
 							<img src="https://paulcomp.com/wp-content/uploads/2015/10/service_parts.jpg" alt="category image">
+							<h3 class="mobile-tab-title">Service Parts</h3>
 
 							<div class="overlay">
 								<h2 class="thumb-title">
@@ -150,7 +152,6 @@ get_header(); ?>
 								</h2>
 								<span class="arrow-up">&nbsp;</span>
 							</div>
-							<span class="mobile-arrow-up">&nbsp;</span>
 
 						</a>
 					</li>
@@ -167,6 +168,7 @@ get_header(); ?>
 								}
 							?>
 							<img src="https://paulcomp.com/wp-content/uploads/2015/08/merchandise_web.jpg" alt="category image">
+							<h3 class="mobile-tab-title">Apparel &amp; Accessories</h3>
 
 							<div class="overlay">
 								<h2 class="thumb-title">
@@ -174,15 +176,11 @@ get_header(); ?>
 								</h2>
 								<span class="arrow-up">&nbsp;</span>
 							</div>
-							<span class="mobile-arrow-up">&nbsp;</span>
 
 						</a>
 					</li>
 				</ul>
 				<div id="components-tab">
-					<h2 class="mobile-tab-title">
-						Components
-					</h2>
 					<div class="portal-container">
 
 						<?php // Components ?>
@@ -216,7 +214,6 @@ get_header(); ?>
 				</div>
 
 				<div id="spare-parts-tab">
-					<h2 class="mobile-tab-title">Service Parts</h2>
 					<div class="portal-container">
 
 						<?php // Service Parts ?>
@@ -250,7 +247,6 @@ get_header(); ?>
 				</div>
 
 				<div id="apparel-accessories-tab">
-					<h2 class="mobile-tab-title">Apparel &amp; Accessories</h2>
 					<div class="portal-container">
 
 						<?php // apparel-accessories ?>

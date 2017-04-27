@@ -11,6 +11,7 @@ get_header(); ?>
 	<script>
 	jQuery(document).ready(function(){
 		jQuery( "#tabs" ).tabs();
+		jQuery('.mobile-tab-title').matchHeight();
 	});
 
 	</script>
@@ -59,7 +60,6 @@ get_header(); ?>
 						<li class="tab-trigger">
 							<a href="#components-tab">
 								<?php
-									global $post,$wpdb;
 									$cat_id = 7;
 									$table_name = $wpdb->prefix . "woocommerce_termmeta";
 									$query="SELECT meta_value FROM {$table_name} WHERE `meta_key`='thumbnail_id' and woocommerce_term_id ={$cat_id} LIMIT 0 , 30";
@@ -70,6 +70,7 @@ get_header(); ?>
 									}
 								?>
 								<img src="https://paulcomp.com/wp-content/uploads/2015/08/klamper_lifestyle_web.jpg" alt="category image">
+								<h3 class="mobile-tab-title">Components</h3>
 
 								<div class="overlay">
 									<h2 class="thumb-title">
@@ -77,14 +78,12 @@ get_header(); ?>
 									</h2>
 									<span class="arrow-up">&nbsp;</span>
 								</div>
-								<span class="mobile-arrow-up">&nbsp;</span>
 
 							</a>
 						</li>
 						<li class="tab-trigger">
 							<a href="#spare-parts-tab">
 								<?php
-									global $post,$wpdb;
 									$cat_id = 11;
 									$table_name = $wpdb->prefix . "woocommerce_termmeta";
 									$query="SELECT meta_value FROM {$table_name} WHERE `meta_key`='thumbnail_id' and woocommerce_term_id ={$cat_id} LIMIT 0 , 30";
@@ -95,6 +94,7 @@ get_header(); ?>
 									}
 								?>
 								<img src="https://paulcomp.com/wp-content/uploads/2015/10/service_parts.jpg" alt="category image">
+								<h3 class="mobile-tab-title">Service Parts</h3>
 
 								<div class="overlay">
 									<h2 class="thumb-title">
@@ -102,14 +102,12 @@ get_header(); ?>
 									</h2>
 									<span class="arrow-up">&nbsp;</span>
 								</div>
-								<span class="mobile-arrow-up">&nbsp;</span>
 
 							</a>
 						</li>
 						<li class="tab-trigger">
 							<a href="#apparel-accessories-tab">
 								<?php
-									global $post,$wpdb;
 									$cat_id = 9;
 									$table_name = $wpdb->prefix . "woocommerce_termmeta";
 									$query="SELECT meta_value FROM {$table_name} WHERE `meta_key`='thumbnail_id' and woocommerce_term_id ={$cat_id} LIMIT 0 , 30";
@@ -120,6 +118,7 @@ get_header(); ?>
 									}
 								?>
 								<img src="https://paulcomp.com/wp-content/uploads/2015/08/merchandise_web.jpg" alt="category image">
+								<h3 class="mobile-tab-title">Apparel &amp; Accessories</h3>
 
 								<div class="overlay">
 									<h2 class="thumb-title">
@@ -127,28 +126,24 @@ get_header(); ?>
 									</h2>
 									<span class="arrow-up">&nbsp;</span>
 								</div>
-								<span class="mobile-arrow-up">&nbsp;</span>
 
 							</a>
 						</li>
 					</ul>
 					<div id="components-tab">
-						<h2 class="mobile-tab-title">
-							Components
-						</h2>
-						<div class="portal-container page-content">
+						<div class="portal-container">
 
 							<?php // Components ?>
 							<?php
-								$prod_categories = get_terms( 'product_cat', array(
-									'orderby' => 'name',
-									'order' => 'ASC',
+							    $prod_categories = get_terms( 'product_cat', array(
+							        'orderby' => 'name',
+							        'order' => 'ASC',
 									'parent' => 7,
-									'hide_empty' => 1
-								));
-								foreach( $prod_categories as $prod_cat ) :
-									$cat_thumb_id = get_woocommerce_term_meta( $prod_cat->term_id, 'thumbnail_id', true );
-									$cat_thumb_url = wp_get_attachment_thumb_url( $cat_thumb_id );
+							        'hide_empty' => 1
+							    ));
+							    foreach( $prod_categories as $prod_cat ) :
+							        $cat_thumb_id = get_woocommerce_term_meta( $prod_cat->term_id, 'thumbnail_id', true );
+							        $cat_thumb_url = wp_get_attachment_thumb_url( $cat_thumb_id );
 									$term_link = get_term_link( $prod_cat, 'product_cat' );
 								?>
 
@@ -169,8 +164,7 @@ get_header(); ?>
 					</div>
 
 					<div id="spare-parts-tab">
-						<h2 class="mobile-tab-title">Service Parts</h2>
-						<div class="portal-container page-content">
+						<div class="portal-container">
 
 							<?php // Service Parts ?>
 							<?php
@@ -203,8 +197,7 @@ get_header(); ?>
 					</div>
 
 					<div id="apparel-accessories-tab">
-						<h2 class="mobile-tab-title">Apparel &amp; Accessories</h2>
-						<div class="portal-container page-content">
+						<div class="portal-container">
 
 							<?php // apparel-accessories ?>
 							<?php

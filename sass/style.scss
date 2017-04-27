@@ -150,6 +150,10 @@ body {
 				float: left;
 			}
 			.overlay {
+				display: none;
+				@include media( $large-screen ) {
+					display: flex;
+				}
 				background: $overlay;
 				height: 100%;
 				opacity: 1;
@@ -208,22 +212,9 @@ body {
 					}
 				}
 			}
-			.mobile-arrow-up {
-				opacity: 0;
-			}
-			.mobile-arrow-up {
-				opacity: 0;
-				border-bottom: $fifteen solid $white;
-				border-left: $fifteen solid transparent;
-				border-right: $fifteen solid transparent;
-				bottom: 0;
-				height: 0;
-				left: 50%;
-				position: absolute;
-				@include transform( translateX(-50%) );
-				width: 0;
-				@include media( $large-screen ) {
-					display: none;
+			&.ui-state-active {
+				.mobile-tab-title {
+					color: $orange;
 				}
 			}
 		}
@@ -237,9 +228,8 @@ body {
 		}
 	}
 	.mobile-tab-title {
-		background: $white;
-		color: $orange;
-		padding: $fifteen 0;
+		color: $black;
+		padding: $fifteen 0 0;
 		text-align: center;
 		@include media( $large-screen ) {
 			display: none;
